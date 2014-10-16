@@ -17,8 +17,6 @@ factory :user, class: 'User' do
     sequence(:email) {Faker::Internet.email}
   end
 
-
-
   factory :school do
     sequence(:name) {Faker::Name.first_name}
   end
