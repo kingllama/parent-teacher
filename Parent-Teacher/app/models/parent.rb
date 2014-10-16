@@ -1,3 +1,3 @@
-class Parent < ActiveRecord::User
+class Parent < User
   has_and_belongs_to_many :students
 end

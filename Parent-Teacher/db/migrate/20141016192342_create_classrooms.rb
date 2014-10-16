@@ -3,8 +3,7 @@ class CreateClassrooms < ActiveRecord::Migration
     create_table :classrooms do |t|
       t.string :subject
       t.integer :grade
-      t.references :teacher
-      t.references :student
+      t.references :user
       t.timestamps
     end
   end

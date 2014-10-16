@@ -3,7 +3,7 @@ class CreateSchools < ActiveRecord::Migration
     create_table :schools do |t|
       t.string :name
       t.references :classroom
-      t.references :student
+      t.references :user
       t.timestamps
     end
   end

@@ -19,17 +19,7 @@ ActiveRecord::Schema.define(version: 20141016192342) do
   create_table "classrooms", force: true do |t|
     t.string   "subject"
     t.integer  "grade"
-    t.integer  "teacher_id"
-    t.integer  "student_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "parents", force: true do |t|
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "email"
-    t.integer  "student_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,33 +27,16 @@ ActiveRecord::Schema.define(version: 20141016192342) do
   create_table "schools", force: true do |t|
     t.string   "name"
     t.integer  "classroom_id"
-    t.integer  "student_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "students", force: true do |t|
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "gender"
-    t.integer  "teacher_id"
-    t.integer  "parent_id"
-    t.integer  "classroom_id"
-    t.integer  "school_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "teachers", force: true do |t|
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "email"
-    t.integer  "student_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.string   "gender"
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
