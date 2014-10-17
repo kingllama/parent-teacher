@@ -1,9 +1,7 @@
 require 'test_helper'
 
 class StudentTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
   def setup
     @timmy = Student.create(firstname: "Timmy")
   end

@@ -9,6 +9,10 @@ class ParentTest < ActiveSupport::TestCase
     @parent = Parent.create
   end
 
+  test "is a User" do
+    assert @parent.is_a?(User), "Parent is not a type of user."
+  end
+
   test "creates new parent" do
     assert @parent, "Parent was not created."
   end
