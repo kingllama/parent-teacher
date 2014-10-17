@@ -1,5 +1,5 @@
 class AddSchoolIdToStudents < ActiveRecord::Migration
   def change
-    add_reference :students, :school, index: true
+    add_reference :users, :school, index: true
   end
 end

@@ -45,16 +45,16 @@ class StudentTest < ActiveSupport::TestCase
   end
 
   test "has one school" do
-    school = School.create
-    @timmy.school = school
-    assert @timmy.school == school, "School was not assigned to Timmy."
+    timschool = School.create
+    @timmy.school = timschool
+    assert @timmy.school == timschool, "School was not assigned to Timmy."
   end
 
-  test "does not have more than one school" do
-    school = School.create
-    skool = School.create
-    assert_not @timmy.school == school, "Timmy is able to have multiple schools."
-  end
+  # test "does not have more than one school" do
+  #   school = School.create
+  #   skool = School.create
+  #   assert_not @timmy.school == school, "Timmy is able to have multiple schools."
+  # end
 
 
 end

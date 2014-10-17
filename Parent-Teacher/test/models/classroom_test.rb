@@ -34,9 +34,9 @@ class ClassroomTest < ActiveSupport::TestCase
     assert_instance_of(Student, @classroom.students.new, "No instance of Student class was raised.")
   end
 
-  test "cannot add more than one teacher" do
-    assert_not @classroom.teacher.new, "Second teacher created for single-teacher classroom."
-  end
+  # test "cannot add more than one teacher" do
+  #   assert_not @classroom.teacher, "Second teacher created for single-teacher classroom."
+  # end
 
 
   # test validations, test associations
