@@ -2,14 +2,19 @@
 <html>
 <head>
   <title>ParentTeacher</title>
-  
-  <script src="/lib/jquery/dist/jquery.min.js"></script>
-  <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="/lib/angular/angular.min.js"></script>
-  <script src="/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+  <base href='/'/>  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application'%>
+  <%= csrf_meta_tags %>
 </head>
-<body ng-app>
-    <div ui-view><%= yield %></div>
+<body ng-app='parentTeacherApp'>
+
+<%= yield %>
+
 </body>
 </html>
