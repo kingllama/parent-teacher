@@ -1,7 +1,9 @@
 class StudentsController < ApplicationController
-  
+
+
   def index
     @students = Student.all
+    respond_with @students
   end
 
   def show
