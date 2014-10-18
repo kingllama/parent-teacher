@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
  
- def index
+  def index
     @teachers = Teacher.all
   end
 
