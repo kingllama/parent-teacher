@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  root :to => 'static#index'
-  # get '*path' => 'static#index'
-
   resources :users
   resources :students
   resources :teachers
