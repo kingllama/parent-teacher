@@ -12,34 +12,63 @@ var parentTeacherApp = angular.module('parentTeacherApp', ['ngAnimate', 'ui.rout
             controller: 'HomeCtrl'
         }) // make sure you remove the semicolon
 
-        // an abstract state that just serves as a
-        // parent for the below child states
-        .state('dashboard', {
-            abstract: true,
-            url: '/dashboard',
-            templateUrl: 'dashboard/layout.html',
-        })
-        // the default route when someone hits dashboard
-        .state('dashboard.one', {
-            url: '',
-            templateUrl: 'dashboard/one.html'
-        })
-        // this is /dashboard/two
-        .state('dashboard.two', {
-            url: '/two',
-            templateUrl: 'dashboard/two.html'
-        })
-        // this is /dashboard/three
-        .state('dashboard.three', {
-            url: '/three',
-            templateUrl: 'dashboard/three.html'
-        })
-
         .state('studentlist', {
             url: '/studentlist',
             templateUrl: 'studentlist.html',
             controller: 'StudentList'
         });
+
+
+        // THESE ARE THE ROUTS WE NEED!!!
+
+        /*
+        1. HOME OR MAIN which we already have above!
+        .state('home', {
+            url: '/',
+            templateUrl: 'home.html',
+            controller: 'HomeCtrl'
+        });
+
+        2. SCHOOL SIGN UP PAGE!
+        .state('signup' {
+            url:'/schoolsignup',
+            templateUrl:'',
+            controler:''
+        });
+
+        3.  ADMIN DASHBOARD!!!
+        .state('admindashboard' {
+            url:'/admindashboard',
+            templateUrl:'',
+            controler:''
+        });
+
+        4.  TEACHER DASHBOARD
+        .state('teacherdashboard' {
+            url:'/teacherdashboard'
+            templateUrl:''
+            controler:''
+        });
+
+        5. PARENT DASHBOARD!
+        .state('parentdashboard' {
+            url:'/parentdashboard',
+            templateUrl:'',
+            controler:''
+        });
+
+
+        6. CLASSROOM VIEWER FOR TEACHER
+        .state('classroom' {
+            url:'/classroom',
+            templateUrl:'',
+            controler:''
+        });
+
+
+        */
+
+
 
     // default fall back route
     $urlRouterProvider.otherwise('/');
