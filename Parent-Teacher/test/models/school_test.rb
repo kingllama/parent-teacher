@@ -5,7 +5,7 @@ class SchoolTest < ActiveSupport::TestCase
   #   assert true
   # end
   def setup
-    @school = School.new
+    @school = School.create(name: "Wilford Elementary", address: "999 Henning Drive, Wilfordshire")
   end
 
   test "creates new school" do
@@ -26,15 +26,15 @@ class SchoolTest < ActiveSupport::TestCase
   end
 
   test "has many classrooms" do
-    classroom1 = Classroom.create
-    classroom2 = Classroom.create
+    classroom1 = Classroom.create(subject: "Grade 2 PE")
+    classroom2 = Classroom.create(subject: "Grade 6 Music")
     @school.classrooms.push(classroom1, classroom2)
     assert @school.classrooms.length == 2, "School does not include 2 classrooms"
   end
 
   test "has many students" do
-    student1 = Student.create
-    student2 = Student.create
+    student1 = Student.create(firstname: "Timmy", lastname: "Thomas")
+    student2 = Student.create(firstname: "Sally", lastname: "Parker")
     @school.students.push(student1, student2)
     assert @school.students.length == 2, "School does not include 2 classrooms"
   end
