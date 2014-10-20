@@ -1,0 +1,40 @@
+<p>Teachers</p>
+<div class='container'>
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li><a href="/admin_teachers">Teachers</a></li>
+    <li><a href="/admin/classrooms">Classrooms</a></li>
+    <li><a href="/admin/students">Students</a></li>
+    <li><a href="/admin/messages">Messages</a></li>
+  </ul>
+  <h1 class='text-center'>Teacher list</h1>
+  <div ng-controller = "StudentList">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><h3>Firstname </h3></th>
+          <th><h3>Lastname </h3></th>
+          <th><h3>Classes </h3></th>
+          <th><h3>Email</h3></th>
+          <th><h3>Address</h3></th>
+        </tr>
+      </thead>
+        <tr ng-repeat="student in students">
+          <td data-title="'Firstname'">
+            {{teacher.firstname}}
+          </td>
+          <td data-title="'Lastname'">
+            {{teacher.lastname}}
+          </td>
+          <td data-title="'Classes'">
+            {{teacher.classroom}}
+          </td>
+          <td data-title="'Email'">
+            {{teacher.email}}
+          </td>
+           <td data-title="'Address'">
+            {{teacher.address}}
+          </td>
+        </tr>
+    </table>
+  </div>
+</div>
