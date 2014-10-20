@@ -21,8 +21,11 @@ var parentTeacherApp = angular.module('parentTeacherApp', ['ngAnimate', 'ui.rout
         .state('signup', {
             url: '/schoolsignup',
             templateUrl: 'schoolsignup/schoolsignup.html',
-            controler:''
-        })
+            controller: 'Student'
+        });
+
+
+        // THESE ARE THE ROUTS WE NEED!!!
 
         .state('teacherdashboard', {
             url:'/teacherdashboard',
