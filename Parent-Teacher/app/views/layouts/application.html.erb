@@ -13,8 +13,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body ng-app='parentTeacherApp'>
-
-<%= yield %>
-
+  <div ng-include="'navbar.html'"></div>
+  <div class="main-view-container" ui-view></div>
+    <div ng-include="'footer.html'"></div>
 </body>
 </html>
