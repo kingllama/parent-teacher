@@ -1,0 +1,18 @@
+
+<%= form_for @school do |f| %>
+  <div class='school-sign-in-holder'>
+    <h2 class='school-sign-in-header'>Register Your School</h2>
+      <div class='school-login-wrap'>
+        <div class='school-login-info'>
+          <div>
+            <% f.label "name" %>
+            <%= f.text_field "name" %>
+          <div>
+          <div>
+          <%= f.submit "Submit" %> 
+          </div>
+        </div>
+      </div>
+    </div> 
+<% end %>
+
