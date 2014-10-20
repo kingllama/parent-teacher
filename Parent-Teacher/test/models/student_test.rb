@@ -3,7 +3,7 @@ require 'test_helper'
 class StudentTest < ActiveSupport::TestCase
 
   def setup
-    @timmy = Student.create(firstname: "Timmy")
+    @timmy = Student.create(firstname: "Timmy", lastname: "Thomas")
   end
 
   test "is a User" do
@@ -24,15 +24,15 @@ class StudentTest < ActiveSupport::TestCase
   end
 
   test "has many parents" do
-    parent1 = Parent.create
-    parent2 = Parent.create
+    parent1 = Parent.create(firstname: "John", lastname: "Thomas", password: "abcd", email: "john@example.ca")
+    parent2 = Parent.create(firstname: "Jane", lastname: "Thomas", password: "abcd", email: "jane@example.ca")
     @timmy.parents.push(parent1, parent2)
     assert @timmy.parents.length == 2, "Two parents were not assigned to Timmy."
   end
 
   test "has many teachers" do
-    teacher1 = Teacher.create
-    teacher2 = Teacher.create
+    teacher1 = Teacher.create(firstname: "Mr", lastname: "Jones", password: "abcd", email: "mrjones@example.ca")
+    teacher2 = Teacher.create(firstname: "Mrs", lastname: "Peters", password: "abcd", email: "mrspeters@example.ca")
     @timmy.teachers.push(teacher1, teacher2)
     assert @timmy.teachers.length == 2, "Two teachers were not assigned to Timmy."
   end
@@ -45,7 +45,7 @@ class StudentTest < ActiveSupport::TestCase
   end
 
   test "has one school" do
-    timschool = School.create
+    timschool = School.create(name: "Wilford Elementary", address: "999 Henning Drive, Wilfordshire")
     @timmy.school = timschool
     assert @timmy.school == timschool, "School was not assigned to Timmy."
   end

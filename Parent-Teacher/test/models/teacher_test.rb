@@ -3,7 +3,7 @@ require 'test_helper'
 class TeacherTest < ActiveSupport::TestCase
 
   def setup
-    @mr_jones = Teacher.create
+    @mr_jones = Teacher.create(firstname: "Mr", lastname: "Jones", password: "abcd", email: "mrjones@example.ca")
   end
 
   test "is a User" do
@@ -19,12 +19,17 @@ class TeacherTest < ActiveSupport::TestCase
   end
 
   test "can get a student" do
-    assert @mr_jones.students, "teacher.students is not a truthy value"
+    assert @mr_jones.students, "teacher.students is not a truthy value."
+  end
+
+  test "is not valid without a password" do
+    @mr_jones.password = nil
+    assert_not @mr_jones.save, "Teacher saved without a password."
   end
 
   test "has many students" do
-    student1 = Student.create
-    student2 = Student.create
+    student1 = Student.create(firstname: "Timmy", lastname: "Thomas")
+    student2 = Student.create(firstname: "Sally", lastname: "Parker")
     @mr_jones.students.push(student1, student2)
     assert @mr_jones.students.length == 2, "Number of students attached to the teacher does not equal 2." 
   end
@@ -34,8 +39,8 @@ class TeacherTest < ActiveSupport::TestCase
   end
 
   test "has many classrooms" do
-    classroom1 = Classroom.create
-    classroom2 = Classroom.create
+    classroom1 = Classroom.create(subject: "Grade 2 PE")
+    classroom2 = Classroom.create(subject: "Grade 6 Music")
     @mr_jones.classrooms.push(classroom1, classroom2)
     assert @mr_jones.classrooms.length == 2, "Mr. Jones does not have 2 classrooms."
   end
