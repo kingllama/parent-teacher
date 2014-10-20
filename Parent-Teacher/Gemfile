@@ -38,6 +38,8 @@ gem 'angular-rails-templates'
 
 gem 'angularjs-rails'
 
+gem 'jasmine-rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
