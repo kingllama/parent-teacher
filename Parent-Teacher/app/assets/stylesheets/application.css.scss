@@ -10,22 +10,95 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
-@import "ng-app/main";
+ @import "ng-app/main";
  */
+ @import "homepage/home.css.scss";
+ @import "school/schoolsignup.css.scss";
+ @import "classroom/classroom.css.scss";
+ @import "parent/parentdashboard.css.scss";
 
 
-.blue {
-  background-color: blue;
+
+body{
+  background-color: #DAF3FC;
 }
 
-.class-box {
-  margin-top: 20px;
-  height: 80px;
+footer{
+  width:auto;
+  height:50px;
+  background-color: #E48743;
+
+    height:50px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+
 }
 
-.student {
-  margin-top: 100px;
-  height: 245px;
-  background-color: grey;
-  font-size: 6em
+.text-center{
+  text-align: center;
 }
+
+.navbar-color{
+  background-color: red;
+  border-radius: 10px;
+  max-width: auto;
+}
+
+.header-holder{
+  height: 300px;
+  width: auto;
+  overflow: hidden;
+  height: 500px;
+  background-image: url('pencils.jpg');
+  background-size: contain;
+  background-repeat: repeat-x;
+  margin-top: -20px;
+}
+
+.school-title{
+  font-size: 42px;
+  padding: 100px;
+}
+
+.about-section{
+  width:auto;
+  height:auto;
+  background-color: white;
+  padding: 50px;
+}
+
+.schoolbox-about{
+  text-align:center;
+
+  color: #261506;
+}
+
+.about-header{
+  width: 150px auto;
+}
+
+.about-paragraph{
+  font-weight: 300;
+  font-size: 1.1em;
+  word-wrap: break-word;
+  width:400px auto;
+
+}
+
+.front-page{
+  background-color: #9E3B33
+}
+
+.navbar{
+ background-color: transparent;
+
+}
+
+
+
+
+
+
+

@@ -16,57 +16,67 @@ var parentTeacherApp = angular.module('parentTeacherApp', ['ngAnimate', 'ui.rout
             url: '/studentlist',
             templateUrl: 'studentlist.html',
             controller: 'StudentList'
+        })
+   
+        .state('signup', {
+            url: '/schoolsignup',
+            templateUrl: 'schoolsignup/schoolsignup.html',
+            controller: 'Student'
         });
 
 
         // THESE ARE THE ROUTS WE NEED!!!
 
-        /*
-        1. HOME OR MAIN which we already have above!
-        .state('home', {
-            url: '/',
-            templateUrl: 'home.html',
-            controller: 'HomeCtrl'
-        });
-
-        2. SCHOOL SIGN UP PAGE!
-        .state('signup' {
-            url:'/schoolsignup',
-            templateUrl:'',
+        .state('teacherdashboard', {
+            url:'/teacherdashboard',
+            templateUrl:'teacher/teacherdashboard.html',
             controler:''
-        });
+        })
 
-        3.  ADMIN DASHBOARD!!!
-        .state('admindashboard' {
-            url:'/admindashboard',
-            templateUrl:'',
-            controler:''
-        });
+        //Parent DASHBOARD 
 
-        4.  TEACHER DASHBOARD
-        .state('teacherdashboard' {
-            url:'/teacherdashboard'
-            templateUrl:''
-            controler:''
-        });
-
-        5. PARENT DASHBOARD!
-        .state('parentdashboard' {
+        .state('parentdashboard', {
             url:'/parentdashboard',
-            templateUrl:'',
+            templateUrl:'parent/parentdashboard.html',
             controler:''
-        });
+        })
 
-
-        6. CLASSROOM VIEWER FOR TEACHER
-        .state('classroom' {
+        // Classroom DASHBOARD
+        .state('classroom', {
             url:'/classroom',
-            templateUrl:'',
+            templateUrl:'classroom/classroom.html',
             controler:''
+        })
+
+        // ADMIN DASHBOARD
+        .state('admindashboard', {
+            url: '/admindashboard',
+            templateUrl: 'admin/admindashboard.html'
+        })
+        // the default route when someone hits admin dashboard and the admin teachers
+        .state('admin/teachers', {
+              url: '/admin_teachers',
+              templateUrl: 'admin/teachers.html',
+              controler:''
+        })
+        // this is admin classrooms
+        .state('admin/classrooms', {
+              url: '/admin/classrooms',
+              templateUrl: 'admin/classrooms.html',
+              controler:''
+        })
+        // this is admin messages
+        .state('admin/messages', {
+              url: '/admin/messages',
+              templateUrl: 'admin/messages.html',
+              controler:''
+        })
+        // this is Admin Students
+        .state('admin/students', {
+              url: '/admin/students',
+              templateUrl: 'admin/students.html',
+              controler:''
         });
-
-
-        */
 
 
 

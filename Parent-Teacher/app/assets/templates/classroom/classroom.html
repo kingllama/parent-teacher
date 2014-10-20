@@ -1,0 +1,11 @@
+<div ng-controller = "StudentList">
+  <div class='container'>
+    <h2 class='jumbotron'>Students</h2>
+      <div ng-repeat='student in students' class='individual-student'>{{student.firstname}} {{student.lastname}}
+        <div class='student-buttons'>
+          <button ng-click=''>Edit</button>
+          <button ng-click=''>Email Parent</button>
+        </div>
+      </div> 
+  </div>
+</div>

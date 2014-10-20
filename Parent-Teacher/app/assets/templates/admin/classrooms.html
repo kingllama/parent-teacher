@@ -1,0 +1,33 @@
+<p>Classrooms</p>
+<div class='container'>
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li><a href="/admin_teachers">Teachers</a></li>
+    <li><a href="/admin/classrooms">Classrooms</a></li>
+    <li><a href="/admin/students">Students</a></li>
+    <li><a href="/admin/messages">Messages</a></li>
+  </ul>
+  <h1 class='text-center'>Classroom List</h1>
+  <div ng-controller = "#">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th><h3>Subject</h3></th>
+          <th><h3>Grade</h3></th>
+          <th><h3>Teacher</h3></th>
+        </tr>
+      </thead>
+       <!--  <tr ng-repeat=""> -->
+          <td data-title="'Subject'">
+            {{class.subject}}
+          </td>
+          <td data-title="'Grade'">
+            {{class.grade}}
+          </td>
+           <td data-title="'Teacher'">
+            {{class.teacher}}
+          </td>
+ <!--        </tr> -->
+    </table>
+  </div>
+</div>
