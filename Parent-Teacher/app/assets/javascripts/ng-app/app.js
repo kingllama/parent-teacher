@@ -15,7 +15,7 @@ var parentTeacherApp = angular.module('parentTeacherApp', ['ngAnimate', 'ui.rout
         .state('studentlist', {
             url: '/studentlist',
             templateUrl: 'studentlist.html',
-            controller: 'StudentList'
+            controller: 'Student'
         });
 
 
