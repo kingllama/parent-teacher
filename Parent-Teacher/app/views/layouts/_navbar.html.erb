@@ -1,0 +1,9 @@
+<% if !@user %>
+  <%= form_tag session_path do %>
+      <%= text_field_tag :email, params[:email], { :placeholder => "Email"} %>
+      <%= password_field_tag :password, params[:password], { :placeholder => "Password"} %>
+      <%= submit_tag "Log In", :class => 'btn btn-default' %>
+  <% end %>
+<% else %>
+  Welcome, <%= @user %>!
+<% end %>
