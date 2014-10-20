@@ -1,3 +1,3 @@
-parentTeacherApp.controller('HomeCtrl', function ($scope) {
-    $scope.things = [];
-});
+// parentTeacherApp.controller('HomeCtrl', function ($scope) {
+//     $scope.things = [];
+// });

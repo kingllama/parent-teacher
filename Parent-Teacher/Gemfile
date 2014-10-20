@@ -33,10 +33,7 @@ gem 'factory_girl_rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'bower-rails'
-gem 'angular-rails-templates'
 
-gem 'angularjs-rails'
 
 gem 'jasmine-rails'
 

@@ -3,18 +3,16 @@
 <head>
   <title>ParentTeacher</title>
 
-  <base href='/'/>  
+
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application'%>
+  <%= stylesheet_link_tag    'application', media: 'all', "data-turbolinks-track" => true %>
+  <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body ng-app='parentTeacherApp'>
-  <div ng-include="'navbar.html'"></div>
-  <div class="main-view-container" ui-view></div>
-    <div ng-include="'footer.html'"></div>
+<body>
+<%= yield %>
 </body>
 </html>
