@@ -6,5 +6,5 @@ class Teacher < User
                presence: true,
                uniqueness: true,
                length: { maximum: 50 },
-               format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+               format: { with: /\A([\A@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 end
