@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Login to your SchoolBox account!</h1>
+    <p>
+      Hi, <%= @teacher.firstname @teacher.lastname %>! 
+
+      You have been registered as a teacher at <%= @school.name %>. Please <a href="<%= @url %>">sign in</a> today using the following credentials:
+
+      Email: <%= @teacher.email %>
+      Password: <%= @password %> <br>
+    </p>
+    <p>
+      You can change your password when you have signed in. Please contact your school administrator (<%= @school.email %>) if you have any difficulties.
+    </p>
+
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

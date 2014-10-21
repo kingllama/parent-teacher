@@ -17,7 +17,6 @@
 //             templateUrl: 'studentlist.html',
 //             controller: 'StudentList'
 //         })
-   
 //         .state('signup', {
 //             url: '/schoolsignup',
 //             templateUrl: 'schoolsignup/schoolsignup.html',

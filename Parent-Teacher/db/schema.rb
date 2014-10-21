@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(version: 20141021012328) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "address"
+    t.string   "password_digest"
+    t.string   "email"
   end
 
   create_table "students_classrooms", force: true do |t|

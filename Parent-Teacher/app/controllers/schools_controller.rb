@@ -18,13 +18,12 @@ class SchoolsController < ApplicationController
 
   def create
     @school = School.new(school_params)
-
-# decide where we want to redirect once a class room as been saved!
-    # if @school.save
-      # redirect_to somewhere
-    # else
-      # render :edit
-    # end
+    
+    if @school.save
+      redirect_to root_path
+    else
+      render :edit
+    end
 
   end
 
@@ -47,7 +46,6 @@ class SchoolsController < ApplicationController
 protected
 
   def school_params
-# do we need to add timestamps?!?!!
-    params.require(:school).permit(:name)
+    params.require(:school).permit(:name, :address, :email, :password, :password_confirmation)
   end
 end
