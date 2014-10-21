@@ -1,1 +1,5 @@
 Hello, School Admin!
+
+<% @school.students.each do |student| %>
+  <%= student.firstname %>
+<% end %>
