@@ -3,12 +3,11 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
-    respond_with @students
   end
 
   def show
     @student = Student.find(params[:id])
-    respond_with @student
+    render "show"
   end
 
   def new #Methinks we don't need this anymore.
@@ -50,7 +49,6 @@ class StudentsController < ApplicationController
 protected
 
   def student_params
-# do we need to add timestamps?!?!!
     params.require(:student).permit(:firstname, :lastname, :gender)
   end
 end

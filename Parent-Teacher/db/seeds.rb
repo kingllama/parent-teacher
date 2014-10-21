@@ -2,6 +2,9 @@ require 'faker'
 FactoryGirl.define do 
 
 factory :user, class: 'User' do
+    sequence(:password) {"12345"}
+    sequence(:gender) {"M"}
+    sequence(:phone) {Faker::PhoneNumber.phone_number}
     sequence(:firstname) {Faker::Name.first_name}
     sequence(:lastname) {Faker::Name.last_name}
   end
@@ -19,6 +22,7 @@ factory :user, class: 'User' do
 
   factory :school do
     sequence(:name) {Faker::Name.first_name}
+    sequence(:password) {"12345"}
   end
 
   factory :classroom do
