@@ -1,1 +1,7 @@
 Hello Parent!
+
+Your Children: 
+
+<% @parent.students.each do |student|  %>
+  <%= student.firstname %> 
+<% end %>

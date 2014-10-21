@@ -19,14 +19,16 @@
       <li><a href="/classroom">Classroom</a></li>
       </ul>
 
-      <% if !current_user %>
+      <% if !current_user && !admin_user %>
         <%= form_tag session_path, :class => "navbar-form navbar-right" do %>
             <%= text_field_tag :email, params[:email], { :class => "form-control", :placeholder => "Email"} %>
             <%= password_field_tag :password, params[:password], { :class => "form-control", :placeholder => "Password"} %>
             <%= submit_tag "Log In", :class => 'btn btn-default' %>
         <% end %>
-      <% else %>
+      <% elsif current_user %>
         Welcome, <%= current_user.firstname %>! (<%= link_to "Log out", session_path("current"), method: :delete %>)
+      <% elsif admin_user %>
+        Welcome, <%= admin_user.name %>! (<%= link_to "Log out", session_path("current"), method: :delete %>)
       <% end %>
 
    </div>

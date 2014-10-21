@@ -10,7 +10,8 @@ class UserMailer < ActionMailer::Base
     # an alternative would be to send emails out after student creation and only send to unique email addresses
   end
 
-  def teacher_welcome(teacher, password)
+  def teacher_welcome(school, teacher, password)
+    @school = school
     @teacher = teacher
     @password = password #school generated password
     @url = 'http://schoolbox.com/login' #not a valid url at this point

@@ -8,13 +8,13 @@
     <p>
       Hi, <%= @teacher.firstname @teacher.lastname %>! 
 
-      You have been registered as a teacher at <%= @student.school.name %>. Please <a href="<%= @url %>">sign in</a> today using the following credentials:
+      You have been registered as a teacher at <%= @school.name %>. Please <a href="<%= @url %>">sign in</a> today using the following credentials:
 
       Email: <%= @teacher.email %>
       Password: <%= @password %> <br>
     </p>
     <p>
-      You can change your password when you have signed in. 
+      You can change your password when you have signed in. Please contact your school administrator (<%= @school.email %>) if you have any difficulties.
     </p>
 
     <p>Thanks for joining and have a great day!</p>

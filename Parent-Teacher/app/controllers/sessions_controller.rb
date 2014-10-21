@@ -19,17 +19,19 @@ class SessionsController < ApplicationController
       end
 
     elsif school #&& school.authenticate(params[:password])
-      session[:user_id] = school.id
+      session[:school_id] = school.id
+      redirect_to school_path(school)
 
     else
       flash.now[:alert] = "Log in failed."
-      render :new
+      redirect_to root_path
     end
   end
 
   def destroy
+    session[:school_id] = nil
     session[:user_id] = nil
-    redirect_to root_path, notice: "Adios!"
+    redirect_to root_path, notice: "Goodbye!"
   end
 
 end
