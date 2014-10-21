@@ -29,17 +29,16 @@ class SchoolsController < ApplicationController
 
   def update
     @school = School.find(params[:id])
-      # if @school.update_attributes(school_params)
-      #   redirect_to somewhere
-      # else 
-      #   render :edit
-      # end
+      if @school.update_attributes(school_params)
+        redirect_to root_path
+      else 
+        render :edit
+      end
   end
 
   def destroy
     @school = School.find(params[:id])
     @school.destroy
-    # redirect_to somewhere
   end
 
 
