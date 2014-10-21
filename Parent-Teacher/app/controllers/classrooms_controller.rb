@@ -19,13 +19,11 @@ class ClassroomsController < ApplicationController
   def create
     @classroom = Classroom.new(classroom_params)
 
-# decide where we want to redirect once a class room as been saved!
-    # if @classroom.save
-      # redirect_to somewhere
-    # else
-      # render :edit
-    # end
-
+    if @classroom.save
+      redirect_to classrooms_path, notice: "#{@classroom.subject} was submitted successfully!"
+    else
+      render :new
+    end
   end
 
   def update
@@ -40,14 +38,14 @@ class ClassroomsController < ApplicationController
   def destroy
     @classroom = Classroom.find(params[:id])
     @classroom.destroy
-    # redirect_to somewhere
+    redirect_to classrooms_path
   end
 
 
 protected
 
   def classroom_params
-    params.require(:classroom).permit(:subject, :grade)
+    params.require(:classroom).permit(:subject, :grade, :teacher_id)
   end
 
   

@@ -5,6 +5,5 @@ class Teacher < User
   validates :email, 
                presence: true,
                uniqueness: true,
-               length: { maximum: 50 },
-               format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+               length: { maximum: 50 }
 end

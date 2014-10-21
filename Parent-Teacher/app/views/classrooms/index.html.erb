@@ -1,0 +1,4 @@
+<% @classrooms.each do |classroom| %>
+<h2><%= link_to classroom.subject, classroom_path(classroom)  %></h2>
+
+<% end %>

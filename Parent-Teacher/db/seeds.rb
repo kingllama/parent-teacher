@@ -1,7 +1,7 @@
 require 'faker'
 FactoryGirl.define do 
 
-factory :user, class: 'User' do
+  factory :user, class: 'User' do
     sequence(:firstname) {Faker::Name.first_name}
     sequence(:lastname) {Faker::Name.last_name}
   end
@@ -15,6 +15,7 @@ factory :user, class: 'User' do
 
   factory :parent, :parent => :user, :class =>'Parent' do
     sequence(:email) {Faker::Internet.email}
+    sequence(:phone) {Faker::PhoneNumber.phone_number}
   end
 
   factory :school do
