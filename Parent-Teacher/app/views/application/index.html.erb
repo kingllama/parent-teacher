@@ -21,9 +21,33 @@
   </div>
 </section>
 
+<section>
+  <div id='login-box'>
+    <img src='/images/logo.png'>
+      <% if !current_user && !admin_user %>
+        <%= form_tag session_path do %>
+          <div>
+            <%= text_field_tag :email, params[:email], { :class => "form-control text-center", :placeholder => "Email"} %>
+          </div>
+          <div>
+            <%= password_field_tag :password, params[:password], { :class => "form-control text-center", :placeholder => "Password"} %>
+          </div>
+          <div class='login'>
+            <%= submit_tag "Log In", :class => 'btn btn-default' %>
+            <%= link_to 'Forgot Your Password' %>
+          </div>
+        <% end %>
+      <% end %>
 
+
+  </div>
+</section>
+
+    
+<!-- <section> -->
 <!-- Different login box if we dont want it in the nav-bar -->
-<!--   <form action='' method='' class='form-sign-in'>
+<!-- <div class='schoolbox-about'>
+  <form action='' method='' class='form-sign-in'>
     <div class='sign-in-holder'>
       <h2 class='form-sigin-header'>Sign In</h2>
       <div class='login-wrap'>
@@ -36,7 +60,6 @@
         </div>
     </div>
   </form>
+</div> -->
+<!-- </section>
  -->
-
-
-</div>

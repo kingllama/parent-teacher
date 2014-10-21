@@ -53,4 +53,6 @@ protected
     params.require(:user).permit(:firstname, :lastname, :email, :gender, :type, :password, :password_confirmation)
   end
 
+  
+
 end
