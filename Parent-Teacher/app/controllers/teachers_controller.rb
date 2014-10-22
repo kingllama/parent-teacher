@@ -25,6 +25,9 @@ class TeachersController < ApplicationController
     # else
       # render :edit
     # end
+    # school = School.find(session[:school_id])
+    # default_password = school.id * rand(10..40)
+    # UserMailer.teacher_welcome(school, @teacher, default_password).deliver
 
   end
 

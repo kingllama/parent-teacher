@@ -12,12 +12,12 @@
  *
   *= require_tree
   *= require_self
+  *= require chosen
  */
  @import "homepage/home.css.scss";
  @import "school/schoolsignup.css.scss";
  @import "classroom/classroom.css.scss";
  @import "parent/parentdashboard.css.scss";
- @import "multi-select/multi-select.css.scss";
 
 html, body{
   height: 100%;

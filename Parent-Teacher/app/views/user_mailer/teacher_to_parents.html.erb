@@ -4,17 +4,11 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <%# render "email_form" %>
-    <h1>Important notice for parents of students in <%= @classroom.subject %>:</h1>
-    <h2>
-      Show and Tell!
-    </h2>
-    <p>
-      Next Monday, students will be having a show and tell and parents are invited to attend if they are able! The presentations will start at 10am and go until 11:30, and after that we will be having a Fun Lunch!
-    </p>
+    <h1><%= @message.subject_line %></h1>
+    <p><%= @message.text %></p>
 
     <p>Thanks and have a great day!</p>
 
-    <p><small>If you feel you have recieved this message in error, please contact the school administrator at <%= @school.email %>.</small></p>
+    <p><small>If you feel you have recieved this message in error, please contact the school administrator at schoolemail@school.com.</small></p>
   </body>
 </html>

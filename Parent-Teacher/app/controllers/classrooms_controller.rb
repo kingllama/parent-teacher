@@ -7,7 +7,12 @@ class ClassroomsController < ApplicationController
   def show
     @classroom = Classroom.find(params[:id])
     @classroom_students = @classroom.students
-    @students = Student.all
+    @students = Student.all - @classroom_students
+    if @classroom.teacher_id
+      @teacher = Teacher.find(@classroom.teacher_id).full_name
+    else
+      @teacher = "None"
+    end
   end
 
   def new
@@ -30,11 +35,26 @@ class ClassroomsController < ApplicationController
 
   def update
     @classroom = Classroom.find(params[:id])
-      # if @classroom.update_attributes(classroom_params)
-      #   redirect_to somewhere
-      # else 
-      #   render :edit
-      # end
+
+    if params[:student_ids] || params[:ids_to_delete]
+      # Add students to classroom
+      if params[:student_ids]
+        @classroom.students += Student.find(params[:student_ids])
+      end
+
+      #Remove students
+      if params[:ids_to_delete]
+        @classroom.students -= Student.find(params[:ids_to_delete])
+      end
+      @classroom.save
+      redirect_to @classroom
+      # Update Classroom info
+    elsif @classroom.update_attributes(classroom_params)
+      redirect_to @classroom
+    else
+      render :edit
+    end
+    
   end
 
   def destroy
