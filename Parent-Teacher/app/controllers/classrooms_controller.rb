@@ -6,10 +6,9 @@ class ClassroomsController < ApplicationController
 
   def show
     @classroom = Classroom.find(params[:id])
-    @classroom_students = @classroom.students
-    @students = Student.all - @classroom_students
-    if @classroom.teacher_id
-      @teacher = Teacher.find(@classroom.teacher_id).full_name
+    @students = Student.all - @classroom.students
+    if @classroom.teacher
+      @teacher = @classroom.teacher
     else
       @teacher = "None"
     end
@@ -25,6 +24,7 @@ class ClassroomsController < ApplicationController
 
   def create
     @classroom = Classroom.new(classroom_params)
+    @classroom.teacher = Teacher.find(params[:teacher_id])
 
     if @classroom.save
       redirect_to classrooms_path, notice: "#{@classroom.subject} was submitted successfully!"
@@ -35,7 +35,6 @@ class ClassroomsController < ApplicationController
 
   def update
     @classroom = Classroom.find(params[:id])
-
     if params[:student_ids] || params[:ids_to_delete]
       # Add students to classroom
       if params[:student_ids]
@@ -50,11 +49,12 @@ class ClassroomsController < ApplicationController
       redirect_to @classroom
       # Update Classroom info
     elsif @classroom.update_attributes(classroom_params)
+      @classroom.teacher = Teacher.find(classroom_params[:teacher_id])
+      @classroom.save
       redirect_to @classroom
     else
       render :edit
     end
-    
   end
 
   def destroy
@@ -67,7 +67,7 @@ class ClassroomsController < ApplicationController
 protected
 
   def classroom_params
-    params.require(:classroom).permit(:subject, :grade, :teacher_id)
+    params.require(:classroom).permit(:subject, :grade, :teacher_id, :school_id)
   end
 
   
