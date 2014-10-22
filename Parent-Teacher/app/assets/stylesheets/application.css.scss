@@ -28,6 +28,7 @@ html, body{
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 
 .container{
@@ -36,14 +37,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .borders{
   border-radius: 2px;
-  border-top:    6px solid #81C6DD;
-  border-left:   6px solid #81C6DD;
-  border-right:  6px solid #E48743;
-  border-bottom: 6px solid #E48743;
+  border-right:  6px solid #85A3FF;
+  border-bottom: 6px solid #85A3FF;
 }
 
 .shadow {
-  box-shadow: 5px 5px 20px #666666;
+  box-shadow: 4px 4px 10px #777777;
 }
 
 p {
@@ -55,6 +54,18 @@ p {
   text-align: center;
 }
 
+.logo {
+  height: 90px;
+  width: 90px;
+  left: 20px;
+  right: 0px;
+  top: 20px;
+  float: left;
+  z-index: 4;
+  display: inline-block;
+  position: fixed;
+}
+/* Here we goo! */
 .navbar-color{
   background-color: red;
   border-radius: 10px;

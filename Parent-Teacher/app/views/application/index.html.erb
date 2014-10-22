@@ -1,11 +1,19 @@
 <div class="bg-image"></div>
+<div class="whitelayer"></div>
 <div id="front-page-content">
-  <h1 id="front-page-header">SchoolBox</h1>
-  
+
+  <div id="front-page-header">
+    <h1>SchoolBox</h1>
+
+    <h3>Teachers, Parents, Communication.</h3>
+  </div>
   <div>
     <div class="shadow container borders front-box" id="brochure">
       <h2>About</h2>
-      <p>SchoolBox was built so that Parents and Teachers could stay connected without giving the responsibilty of transposrting information to the children.  It is an all encompassing web aplication that gives the Teacher the ability to send batch emails to all of the students in their respective classes, or email a parent directly if they have concerns directly related to their child.  The Teachers can send out anything from permission slips to report cards.  It lets teachers keep information organised in a nice warm environment.... BLAH BLAH BLAH</p>
+      <p>SchoolBox was built so that Parents and Teachers could stay connected without giving the responsibilty of transposrting information to the children.  It is an all encompassing web aplication that gives the Teacher the ability to send batch emails to all of the students in their respective classes, or email a parent directly if they have concerns directly related to their child.  The Teachers can send out anything from permission slips to report cards.  It lets teachers keep information organised in a nice warm environment.... BLAH BLAH BLAH
+        <button class="btn btn-default">Register Your School</button>
+      </p>
+
     </div>
 
     <div class="shadow container borders front-box" id="login-box">
@@ -17,10 +25,10 @@
         <br>
         <%= password_field_tag :password, params[:password], { :class => "form-control", :placeholder => "Password"} %>
         <br>
-        <%= submit_tag "Log In", :class => 'btn btn-default' %>
+        <%= submit_tag "Log In", :class => 'btn btn-default' %> <button class="btn btn-default btn-control">Sign Up</button>
         <% end %>
       </div>
-      
+        
   </div>
   </div>
 

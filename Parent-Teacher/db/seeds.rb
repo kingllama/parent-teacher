@@ -10,6 +10,7 @@ factory :user, class: 'User' do
   end
 
   factory :student, :parent => :user, :class =>'Student' do
+    sequence(:password) {"12345"}
   end
 
   factory :teacher, :parent => :user, :class =>'Teacher' do
@@ -20,7 +21,7 @@ factory :user, class: 'User' do
   factory :parent, :parent => :user, :class =>'Parent' do
     sequence(:email) {Faker::Internet.email}
     sequence(:phone) {Faker::PhoneNumber.phone_number}
-    #sequence(:password) {"12345"}
+    sequence(:password) {"12345"}
   end
 
   factory :school do
