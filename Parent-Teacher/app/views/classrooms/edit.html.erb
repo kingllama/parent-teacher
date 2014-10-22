@@ -1,15 +1,1 @@
-<%= form_for @classroom do |f| %>
-  
-    <h2>Edit classroom</h2>
-          <div>
-            <%= f.label "Subject" %>
-            <%= f.text_field "subject", :class => 'form-control small-input'  %>
-          </div>
-          <div>
-            <%= f.label "Grade" %>
-            <%= f.text_field "grade", :class => 'form-control small-input'  %>
-          </div>
-          <div>
-            <%= f.submit "Submit", :class => 'btn btn-danger'%> 
-          </div>
-<% end %>
+<%= render 'form' %>

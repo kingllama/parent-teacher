@@ -1,25 +1,2 @@
 <h1>Create a new class room</h1>
-<%= form_for @classroom do |f| %>
-  <% if @classroom.errors.any? %>
-    <div>
-      <%= pluralize(@classroom.errors.count, "error") %> prevented the account from being created:
-      <ul>
-        <% @classroom.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div>
-    <%= f.label "Grade" %><br>
-    <%= f.text_field "grade" %>
-  </div>
-  <div>
-    <%= f.label "subject", "Subject" %><br>
-    <%= f.text_field "subject" %>
-  </div>
-  <div>
-    <%= f.collection_select(:teacher_id, Teacher.all, :id, :full_name) %>
-  </div>
-  <div><%= f.submit "Submit" %></div>
-<% end %>
+<%= render 'form' %>

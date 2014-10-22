@@ -8,6 +8,11 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.find(params[:id])
     @classroom_students = @classroom.students
     @students = Student.all - @classroom_students
+    if @classroom.teacher_id
+      @teacher = Teacher.find(@classroom.teacher_id).full_name
+    else
+      @teacher = "None"
+    end
   end
 
   def new
@@ -29,7 +34,6 @@ class ClassroomsController < ApplicationController
   end
 
   def update
-    puts "Updating classroom"
     @classroom = Classroom.find(params[:id])
 
     if params[:student_ids] || params[:ids_to_delete]
@@ -44,6 +48,7 @@ class ClassroomsController < ApplicationController
       end
       @classroom.save
       redirect_to @classroom
+      # Update Classroom info
     elsif @classroom.update_attributes(classroom_params)
       redirect_to @classroom
     else
