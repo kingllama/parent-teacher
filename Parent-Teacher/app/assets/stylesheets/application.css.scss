@@ -19,13 +19,46 @@
  @import "parent/parentdashboard.css.scss";
  @import "multi-select/multi-select.css.scss";
 
+html, body{
+  height: 100%;
+  padding: 0px;
+  background-color: #DAF3FC;
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .container{
-background-color: white;
-border-radius: 0 0 5px 5px;
+  background-color: white;
 }
-body{
-  background-color: #DAF3FC;
+
+.borders{
+  border-radius: 2px;
+  border-top:    6px solid #81C6DD;
+  border-left:   6px solid #81C6DD;
+  border-right:  6px solid #E48743;
+  border-bottom: 6px solid #E48743;
+}
+
+.shadow {
+  box-shadow: 5px 5px 20px #666666;
+}
+
+p {
+  font-size: 1em;
+}
+
+
+.text-center{
+  text-align: center;
+}
+
+.navbar-color{
+  background-color: red;
+  border-radius: 10px;
+  max-width: auto;
 }
 
 footer{
@@ -39,27 +72,6 @@ footer{
     right:0px;
     margin-bottom:0px;
 
-}
-
-.text-center{
-  text-align: center;
-}
-
-.navbar-color{
-  background-color: red;
-  border-radius: 10px;
-  max-width: auto;
-}
-
-.header-holder{
-  height: 300px;
-  width: auto;
-  overflow: hidden;
-  height: 500px;
-  background-image: url('pencils.jpg');
-  background-size: contain;
-  background-repeat: repeat-x;
-  margin-top: -20px;
 }
 
 .school-title{
@@ -76,7 +88,6 @@ footer{
 
 .schoolbox-about{
   text-align:center;
-
   color: #261506;
 }
 
@@ -100,10 +111,3 @@ footer{
  
 
 }
-
-
-
-
-
-
-

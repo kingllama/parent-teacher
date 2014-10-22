@@ -1,3 +1,34 @@
+<div class="bg-image"></div>
+<div id="front-page-content">
+  <h1 id="front-page-header">SchoolBox</h1>
+  
+  <div>
+    <div class="shadow container borders front-box" id="brochure">
+      <h2>About</h2>
+      <p>SchoolBox was built so that Parents and Teachers could stay connected without giving the responsibilty of transposrting information to the children.  It is an all encompassing web aplication that gives the Teacher the ability to send batch emails to all of the students in their respective classes, or email a parent directly if they have concerns directly related to their child.  The Teachers can send out anything from permission slips to report cards.  It lets teachers keep information organised in a nice warm environment.... BLAH BLAH BLAH</p>
+    </div>
+
+    <div class="shadow container borders front-box" id="login-box">
+    <h3>Login</h3>
+      <div>
+        <%= form_tag session_path do %>
+        <br>
+        <%= text_field_tag :email, params[:email], { :class => "form-control", :placeholder => "Email"} %>
+        <br>
+        <%= password_field_tag :password, params[:password], { :class => "form-control", :placeholder => "Password"} %>
+        <br>
+        <%= submit_tag "Log In", :class => 'btn btn-default' %>
+        <% end %>
+      </div>
+      
+  </div>
+  </div>
+
+</div>
+
+
+
+<!--
 <div class='front-page'>
   <section>
     <div class='header-holder'>
@@ -38,11 +69,9 @@
           </div>
         <% end %>
       <% end %>
-
-
   </div>
 </section>
-
+-->
     
 <!-- <section> -->
 <!-- Different login box if we dont want it in the nav-bar -->

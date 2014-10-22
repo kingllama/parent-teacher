@@ -1,30 +1,52 @@
-.jumbo-style{
-  background-color: white;
-  font-size: 42px;
+
+h1 {
   text-align: center;
+  font-size: 5.5em;
 }
 
+#front-page-header {
+  padding-bottom: 7%;
+}
+.bg-image {
+  height: 100%;
+  -webkit-filter: blur(3px);
+  background-image: url('pencils.jpg');
+  background-size: contain;
+  background-repeat: repeat-x;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  position: fixed;
+}
 
+#front-page-content{
+  height: 100%;
+  width: 100%;
+  margin-top: 0px;
+  padding-top: 40px;
+  position: fixed;
+  z-index: 2;
+}
+
+.front-box{
+  display: inline-block;
+}
+
+.front-box p {
+  opacity: 1;
+}
 
 #login-box{
-  padding:20px;
-  display:block;
-  margin:10px auto;
-  width:350px;
-  border-radius: 7px;
-  background-color: black;
-  border: 4px solid #9e3b33;
+  margin-top: 0.75%;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  width: 300px;
+  float: right;
+  margin-right: 22%; 
 }
-#login-box img {
-  left:50%;
-  width:100px;
-  height: 100px;
-  margin-left: 33%;
-  margin-bottom: 20px;
-}
-#login-box div{
-  margin:20px;
-}
-#login-box.login{
-  display:inline-block;
+
+#brochure{
+  width: 400px;
+  float: left; 
+  margin-left: 18%;
 }
