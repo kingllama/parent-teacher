@@ -27,6 +27,7 @@ class StudentsController < ApplicationController
     # else
       # render :edit
     # end
+    # UserMailer.parent_signup_email(@student).deliver
 
   end
 

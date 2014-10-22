@@ -5,9 +5,7 @@ class UserMailer < ActionMailer::Base
   def parent_signup_email(student)
     @student =  student
     @url = 'http://schoolbox.com/parent-signup' #not a valid url at this point
-    @student.parents.each do |parent|
-      mail(to: parent.email, subject: "Welcome to SchoolBox")
-    end
+    mail(to: @student.parent_email, subject: "Welcome to SchoolBox") #students currently do not have parent_email
     # if this email is sent out on student creation, include some kind of validation to not send out this email if the parent has already received the email for another child
     # an alternative would be to send emails out after student creation and only send to unique email addresses
   end
@@ -21,15 +19,11 @@ class UserMailer < ActionMailer::Base
   end
 
   def custom_email(message, recipients)
-
     @message = message
     if @message.attachment_file_name
       attachments[@message.attachment_file_name] = File.read(@message.attachment.path) 
     end
     mail(to: "", subject: @message.subject_line, bcc: recipients )
-
   end
-
-
 
 end

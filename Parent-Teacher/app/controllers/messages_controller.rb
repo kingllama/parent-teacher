@@ -34,7 +34,7 @@ class MessagesController < ApplicationController
     end
       
     if @message.save
-      UserMailer.teacher_to_parents(@message, @send_to).deliver
+      UserMailer.custom_email(@message, @send_to).deliver
       redirect_to root_path
     else
       render :new
