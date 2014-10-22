@@ -1,0 +1,6 @@
+<%= form_for @message, :html => { :multipart => true }, :class => 'form-horizontal' do |f| %>
+  <%= f.text_field :subject_line, {:class => 'form-control', :placeholder => "Subject line"} %>
+  <%= f.text_area :text, {:class => 'form-control', :placeholder => 'Your message'} %>
+  <%= f.file_field :attachment %>
+  <%= f.submit "Submit", {:class => 'btn btn-default'} %> 
+<% end %>

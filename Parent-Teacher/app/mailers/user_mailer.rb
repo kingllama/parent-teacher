@@ -20,6 +20,29 @@ class UserMailer < ActionMailer::Base
 
   def school_newsletter(school)
     @school = school
+    @all_parents_and_teachers = User.all
+    @all_parents_and_teachers.each do |user|
+      if user.email
+        mail(to: user.email, subject: "News from #{@school.name}!")
+      end
+    end
+  end
+
+  def internal_notice(school)
+    @school = school
+    @teachers = school.teachers
+    @teachers.each do |teacher|
+      mail(to: teacher.email, subject: "Internal Notice to Teachers at #{school.name}")
+    end
+  end
+
+  def teacher_to_parents(classroom)
+    @classroom = classroom
+    @students = classroom.students
+    @unique_parents = @students.uniq { |student| student.parent_email } #if siblings were in the same class, parent would only get one email
+    @unique_parents.each do |student|
+      mail(to: student.parent_email, subject: "News about your child's class, #{classroom.subject}")
+    end
   end
 
 
