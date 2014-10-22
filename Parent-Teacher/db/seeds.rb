@@ -3,10 +3,8 @@ FactoryGirl.define do
 
 
 factory :user, class: 'User' do
-    sequence(:password) {"12345"}
     sequence(:gender) {"M"}
     sequence(:phone) {Faker::PhoneNumber.phone_number}
-
     sequence(:firstname) {Faker::Name.first_name}
     sequence(:lastname) {Faker::Name.last_name}
   end
@@ -16,11 +14,13 @@ factory :user, class: 'User' do
 
   factory :teacher, :parent => :user, :class =>'Teacher' do
     sequence(:email) {Faker::Internet.email}
+    sequence(:password) {"12345"}
   end
 
   factory :parent, :parent => :user, :class =>'Parent' do
     sequence(:email) {Faker::Internet.email}
     sequence(:phone) {Faker::PhoneNumber.phone_number}
+    #sequence(:password) {"12345"}
   end
 
   factory :school do
