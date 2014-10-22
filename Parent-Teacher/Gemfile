@@ -36,6 +36,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jasmine-rails'
 
 gem 'websocket-rails'
+gem 'chosen-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 
