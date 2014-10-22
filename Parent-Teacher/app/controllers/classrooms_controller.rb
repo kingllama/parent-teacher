@@ -43,16 +43,13 @@ class ClassroomsController < ApplicationController
         @classroom.students -= Student.find(params[:ids_to_delete])
       end
       @classroom.save
+      redirect_to @classroom
+    elsif @classroom.update_attributes(classroom_params)
+      redirect_to @classroom
+    else
+      render :edit
     end
-
-
     
-    redirect_to @classroom
-      # if @classroom.update_attributes(classroom_params)
-      #   redirect_to somewhere
-      # else 
-      #   render :edit
-      # end
   end
 
   def destroy
