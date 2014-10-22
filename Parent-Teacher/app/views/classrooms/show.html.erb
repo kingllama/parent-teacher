@@ -2,6 +2,7 @@
   <%= @classroom.subject %> (<%= link_to "Edit", edit_classroom_path(@classroom) %>,
   <%= link_to "Delete", classroom_path(@classroom), method: :delete, data: {confirm: "You sure?"} %>)
 </h2>
+<h3>Teacher: <%=@teacher %></h3><br>
 
 <%= form_for @classroom do |f| %>
 
@@ -32,3 +33,5 @@
 </div>
 
 <% end %>
+<%= stylesheet_link_tag    'application', media: 'all', "data-turbolinks-track" => true %>
+<%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
