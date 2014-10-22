@@ -13,7 +13,4 @@ Rails.application.routes.draw do
   resources :parents
   resources :classrooms
 
-  
-
-
 end

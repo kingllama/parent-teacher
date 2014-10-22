@@ -16,14 +16,13 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(classroom_params)
-
-# decide where we want to redirect once a class room as been saved!
-    # if @message.save
-      # redirect_to somewhere
-    # else
-      # render :edit
-    # end
+    @message = Message.new(message_params) # define user.school based on user/school session id, pass to mailer also
+    if @message.save
+      UserMailer.teacher_to_parents(@message)
+      redirect_to root_path
+    else
+      render :new
+    end
 
   end
 
@@ -47,7 +46,7 @@ protected
 
   def message_params
     # DO we need to specify timestamps here!?!?!?!
-    params.require(:message).permit(:text, :type)
+    params.require(:message).permit(:subject_line, :text, :type, :attachment)
   end
 
 end
