@@ -1,5 +1,24 @@
-Hello Teacher!
+<div class='container'>
+  <div class='teacher-photo'>
+  </div>
+  <div class='teacher-info'>
+      <p>Name: <%= current_user.fullname %> </p>
+      <p>Email: <%= current_user.email %> </p>
+  </div>
+    <!-- dropdown menu for class list for the teacher -->
+    
+    <div class='btn-group'>
+      <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
+        Classrooms <span class="caret"></span>
+      </button>
+      <ul class='dropdown-menu' role='menu'>
+        <% @teacher.classrooms.each do |teacher|  %>
+          <li><%= link_to "#{teacher.subject}", classroom_path(teacher)%></li>
+        <%end%>
+      </ul>
+    </div>
+    
+</div>  <!-- end of container -->
 
-<% @teacher.classrooms.each do |classroom|  %>
-  <%= classroom.subject %> 
-<% end %>
+
+

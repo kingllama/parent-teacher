@@ -4,8 +4,10 @@ class User < ActiveRecord::Base
    validates :lastname, presence: true, length: { maximum: 40 }
    #validates :gender, presence: true
    validates :type, presence: true
+  
+  def fullname
+    "#{firstname} #{lastname}"
+  end
+  
 end
 
-def full_name
-    "#{firstname.capitalize} #{lastname.capitalize}"
-  end

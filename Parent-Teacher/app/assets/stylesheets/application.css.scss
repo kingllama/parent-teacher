@@ -17,9 +17,13 @@
  @import "school/schoolsignup.css.scss";
  @import "classroom/classroom.css.scss";
  @import "parent/parentdashboard.css.scss";
+ @import "multi-select/multi-select.css.scss";
 
 
-
+.container{
+background-color: white;
+border-radius: 0 0 5px 5px;
+}
 body{
   background-color: #DAF3FC;
 }
@@ -93,7 +97,7 @@ footer{
 }
 
 .navbar{
- background-color: transparent;
+ 
 
 }
 

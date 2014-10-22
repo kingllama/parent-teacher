@@ -6,6 +6,8 @@ class ClassroomsController < ApplicationController
 
   def show
     @classroom = Classroom.find(params[:id])
+    @classroom_students = @classroom.students
+    @students = Student.all
   end
 
   def new
