@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
     @admin_user ||= School.find_by(id: session[:school_id]) if session[:school_id]
   end
 
+
   helper_method :current_user, :admin_user
 
 end
