@@ -1,4 +1,6 @@
-Hello, School Admin!
+<h1>Hello, School Admin!</h1>
+
+<%= link_to "Add a classroom", new_classroom_path %>
 
 <% @school.students.each do |student| %>
   <%= student.firstname %>

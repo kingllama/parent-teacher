@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 
 gem 'faker'
 
+gem 'pry'
 gem 'factory_girl_rails'
 
 # Use ActiveModel has_secure_password
