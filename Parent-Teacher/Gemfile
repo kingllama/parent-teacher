@@ -39,6 +39,7 @@ gem 'websocket-rails'
 
 gem "paperclip", "~> 4.2"
 
+gem 'chosen-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 
