@@ -1,4 +1,13 @@
+<% if @sender.is_a?(Teacher) %>
+  <% recipients_array = ["All student guardians"] %>
+<% elsif @sender.is_a?(School) %>
+  <% recipients_array = ["All student guardians", "All teachers"] %>
+<% end %>
+
+<% @sender.classrooms.each { |classroom| recipients_array.push(classroom.subject) } %>
+
 <%= form_for @message, :html => { :multipart => true }, :class => 'form-horizontal' do |f| %>
+  <%= f.select :recipients, options_for_select(recipients_array), {prompt: 'Choose recipients', :class => 'form-control'} %>
   <%= f.text_field :subject_line, {:class => 'form-control', :placeholder => "Subject line"} %>
   <%= f.text_area :text, {:class => 'form-control', :placeholder => 'Your message'} %>
   <%= f.file_field :attachment %>
