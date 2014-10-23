@@ -1,0 +1,11 @@
+<%# Teacher creation form - school access only %>
+<%= form_for @teacher, :html => { :multipart => true }, :class => 'form-horizontal' do |f| %>
+  <%= f.text_field :firstname, {:class => 'form-control', :placeholder => "First Name"} %>
+  <%= f.text_field :lastname, {:class => 'form-control', :placeholder => "Last Name"} %>
+  <%= f.text_field :email, {:class => 'form-control', :placeholder => "Email"} %>
+  <%= f.text_field :address, {:class => 'form-control', :placeholder => "Address"} %>
+  <%= f.telephone_field :phone, {:class => 'form-control', :placeholder => "Primary Phone Number"} %>
+  <%= f.hidden_field :school_id, {:class => 'form-control', :value => session[:school_id] } %>
+  <%= f.file_field :avatar %>
+  <%= f.submit "Create New Teacher", {:class => 'btn btn-default'} %> 
+<% end %>
