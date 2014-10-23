@@ -8,7 +8,7 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.find(params[:id])
     @students = Student.all - @classroom.students
     if @classroom.teacher
-      @teacher = @classroom.teacher
+      @teacher = @classroom.teacher.full_name
     else
       @teacher = "None"
     end
@@ -19,12 +19,13 @@ class ClassroomsController < ApplicationController
   end
 
   def edit
+    authorize
     @classroom = Classroom.find(params[:id])
   end
 
   def create
     @classroom = Classroom.new(classroom_params)
-    @classroom.teacher = Teacher.find(params[:teacher_id])
+    @classroom.teacher = Teacher.find(classroom_params[:teacher_id])
 
     if @classroom.save
       redirect_to classrooms_path, notice: "#{@classroom.subject} was submitted successfully!"
