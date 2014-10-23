@@ -10,6 +10,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+
   end
 
   # GET /events/new
@@ -26,6 +27,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.teacher_id = current_user.id
+
 
     respond_to do |format|
       if @event.save
@@ -55,11 +57,14 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
-    @event.destroy
-    respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+      @event.destroy
+      respond_to do |format|
+        format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+
+
   end
 
   private
@@ -70,6 +75,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :description, :start_time, :end_time, :teacher_id)
+      params.require(:event).permit(:title, :description, :start_time, :end_time, :teacher_id, :student_id)
     end
 end

@@ -44,7 +44,7 @@ class TeachersController < ApplicationController
   def destroy
     @teacher = Teacher.find(params[:id])
     @teacher.destroy
-    # redirect_to somewhere
+    redirect_to root_path
   end
 
 

@@ -25,6 +25,7 @@ class ApplicationController < ActionController::Base
     @parent_user ||= Parent.find(id: session[:parent_id]) if session[:parent_id]   
   end
 
+
   def authorize
     unless admin_user
       flash[:error] = 'You have to be an admin to access this page.'
