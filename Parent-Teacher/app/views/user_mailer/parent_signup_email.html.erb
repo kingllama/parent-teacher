@@ -6,9 +6,13 @@
   <body>
     <h1>Welcome to SchoolBox!</h1>
     <p>
-      Your child <%= @student.firstname @student.lastname %> has been registered at <%= @student.school.name %>.
+      Your child has been registered at school.
 
-      Please <a href="<%= @url %>">sign in</a> today using this email and a password of your choice in order to stay in touch with your child's teachers and have access to important documents such as permission forms and report cards.<br>
+      Please <a href="<%= @url %>">sign in</a> today using the following credentials in order to stay in touch with your child's teachers and have access to important documents such as permission forms and report cards. You can change your password upon login.<br>
+    </p>
+    <p>
+      <strong>Username: </strong><%= @email %>
+      <strong>Password: </strong><%= @password %>
     </p>
     <p>
       To sign in to the site, just follow this link or copy and paste it into your address bar: <a href="<%= @url %>"><%= @url %></a>.

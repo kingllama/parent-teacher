@@ -1,6 +1,5 @@
 class StudentsController < ApplicationController
 
-
   def index
     @students = Student.all
   end
@@ -21,15 +20,16 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-    @student.parents.push(Parent.create(email: @student.email, password: rand(3456..7890) ))
-
-# decide where we want to redirect once a class room as been saved!
-    # if @student.save
-      # redirect_to somewhere
-    # else
-      # render :edit
-    # end
-    # UserMailer.parent_signup_email(@student).deliver
+    if @student.save
+      if @student.parent_email
+        parent = Parent.create(email: @student.parent_email, password: rand(3456..7890))
+        @student.parents.push(parent)
+        UserMailer.parent_signup_email(parent.email, parent.password).deliver
+      end
+      redirect_to school_path(admin_user)
+    else
+      redirect_to root_path
+    end
 
   end
 
@@ -52,6 +52,6 @@ class StudentsController < ApplicationController
 protected
 
   def student_params
-    params.require(:student).permit(:firstname, :lastname, :gender)
+    params.require(:student).permit(:firstname, :lastname, :grade, :gender, :address, :parent_email, :emergency_contact_name, :emergency_contact_relation, :emergency_phone, :school_id, :notes, :avatar, :evaluation)
   end
 end
