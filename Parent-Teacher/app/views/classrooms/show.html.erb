@@ -2,7 +2,7 @@
   <%= @classroom.subject %> (<%= link_to "Edit", edit_classroom_path(@classroom) %>,
   <%= link_to "Delete", classroom_path(@classroom), method: :delete, data: {confirm: "You sure?"} %>)
 </h2>
-<h3>Teacher: <%=@teacher.full_name %></h3><br>
+<h3>Teacher: <%=@teacher %></h3><br>
 
 <%= form_for @classroom do |f| %>
 
