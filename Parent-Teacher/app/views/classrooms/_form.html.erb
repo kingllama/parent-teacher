@@ -19,6 +19,7 @@
   </div>
   <div>
     <%= f.collection_select(:teacher_id, Teacher.all, :id, :full_name) %>
+    <%= f.hidden_field :school_id, :value => session[:school_id] %>
   </div>
   <div>
     <%= f.submit "Submit", :class => 'btn btn-danger'%> 
