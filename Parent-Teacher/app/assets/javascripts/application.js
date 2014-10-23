@@ -17,4 +17,14 @@
 //= require chosen-jquery
 //= require_tree .
 //= require websocket_rails/main
+//= require fullcalendar
 
+
+
+// CALENDAR JQUERY
+$(function() {
+  $('#calendar').fullCalendar({
+    events: '/events.json'
+  });
+
+});

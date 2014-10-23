@@ -2,8 +2,8 @@
   <div class='teacher-photo'>
   </div>
   <div class='teacher-info'>
-      <p>Name: <%= current_user.fullname %> </p>
-      <p>Email: <%= current_user.email %> </p>
+      <p>Name: <%= @teacher.full_name %> </p>
+      <p>Email: <%= @teacher.email %> </p>
   </div>
     <!-- dropdown menu for class list for the teacher -->
     
@@ -12,11 +12,20 @@
         Classrooms <span class="caret"></span>
       </button>
       <ul class='dropdown-menu' role='menu'>
-        <% @teacher.classrooms.each do |teacher|  %>
-          <li><%= link_to "#{teacher.subject}", classroom_path(teacher)%></li>
+        <% @teacher.classrooms.each do |classroom|  %>        
+            <li><%= link_to "#{classroom.subject}", classroom_path(classroom)%></li>
         <%end%>
       </ul>
     </div>
+
+    <p><%= link_to "Add Appointment", new_event_path(@event) %></p>
+    <% @teacher.events.each do |event| %>
+      <p><%= "#{event.title}" %> | <%= link_to 'Remove', event, method: :delete, data: { confirm: 'Are you sure?' } %> <%= link_to 'Edit', edit_event_path(event) %></p>
+
+    <% end %> 
+
+    <div id='calendar'></div>
+
     
 </div>  <!-- end of container -->
 

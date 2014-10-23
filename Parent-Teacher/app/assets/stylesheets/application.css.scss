@@ -13,13 +13,16 @@
   *= require_tree
   *= require_self
   *= require chosen
+  *= require fullcalendar
  */
  @import "homepage/home.css.scss";
  @import "school/schoolsignup.css.scss";
  @import "classroom/classroom.css.scss";
  @import "parent/parentdashboard.css.scss";
 
-
+#calendar{
+  width: 600px;
+}
 .container{
 background-color: white;
 border-radius: 0 0 5px 5px;
