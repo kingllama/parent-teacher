@@ -6,12 +6,12 @@
   <body>
     <h1>Login to your SchoolBox account!</h1>
     <p>
-      Hi, <%= @teacher.firstname @teacher.lastname %>! 
+      Hi, <%= @teacher.firstname %> <%= @teacher.lastname %>! 
 
       You have been registered as a teacher at <%= @school.name %>. Please <a href="<%= @url %>">sign in</a> today using the following credentials:
 
-      Email: <%= @teacher.email %>
-      Password: <%= @password %> <br>
+      <strong>Email:</strong> <%= @teacher.email %>
+      <strong>Password:</strong> <%= @password %> <br>
     </p>
     <p>
       You can change your password when you have signed in. Please contact your school administrator (<%= @school.email %>) if you have any difficulties.

@@ -6,9 +6,7 @@ class UserMailer < ActionMailer::Base
     @email =  email
     @password = password
     @url = 'http://schoolbox.com/' #not a valid url at this point
-    mail(to: @email, subject: "Welcome to SchoolBox") # students currently do not have parent_email
-    # if this email is sent out on student creation, include some kind of validation to not send out this email if the parent has already received the email for another child
-    # an alternative would be to send emails out after student creation and only send to unique email addresses
+    mail(to: @email, subject: "Welcome to SchoolBox") 
   end
 
   def teacher_welcome(school, teacher, password)
@@ -24,7 +22,7 @@ class UserMailer < ActionMailer::Base
     if @message.attachment_file_name
       attachments[@message.attachment_file_name] = File.read(@message.attachment.path) 
     end
-    mail(to: "", subject: @message.subject_line, bcc: recipients )
+    mail(to: "", subject: @message.subject_line, bcc: recipients ) # from: current_user.email
   end
 
 end

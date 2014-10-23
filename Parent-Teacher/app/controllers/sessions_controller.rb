@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 
     if user #&& user.authenticate(params[:password])
       session[:user_id] = user.id
+      session[:school_id] = nil
       case user.type
         when "Parent"
           redirect_to parent_path(user)
@@ -20,6 +21,7 @@ class SessionsController < ApplicationController
 
     elsif school #&& school.authenticate(params[:password])
       session[:school_id] = school.id
+      session[:user_id] = nil
       redirect_to school_path(school)
 
     else
