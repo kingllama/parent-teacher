@@ -6,6 +6,7 @@ class TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find(params[:id])
+    @teacher.events.to_json { render :show }
   end
 
   def new

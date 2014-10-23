@@ -13,11 +13,13 @@
   *= require_tree
   *= require_self
   *= require chosen
+  *= require fullcalendar
  */
  @import "homepage/home.css.scss";
  @import "school/schoolsignup.css.scss";
  @import "classroom/classroom.css.scss";
  @import "parent/parentdashboard.css.scss";
+
 
 html, body{
   height: 100%;
@@ -29,7 +31,11 @@ html, body{
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
+
+#calendar{
+  width: 600px;
 }
+
 
 .container{
   background-color: white;
