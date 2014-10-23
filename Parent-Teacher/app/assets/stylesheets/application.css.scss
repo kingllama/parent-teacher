@@ -20,11 +20,33 @@
  @import "classroom/classroom.css.scss";
  @import "parent/parentdashboard.css.scss";
 
+a {
+  color: #90CA77;
+}
+
+a:hover {
+  color: #B1DAA0;
+  text-decoration: none;
+}
+
+a div {
+  transition: border-width 0.2s ease-out;
+  border-width: 4px;
+  color: #777777;
+}
+
+a div:hover {
+  transition: border-width 0.2s ease-in;
+  color: black;
+  border-width: 2px;
+}
 
 html, body{
+  position: relative;
+  z-index: -999;
   height: 100%;
   padding: 0px;
-  background-color: #DAF3FC;
+  background-color: #85A3FF;
   font-family: 'Lato', sans-serif;
 }
 
@@ -33,8 +55,15 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+bh1 {
+  margin: .67em 0;
+  font-size: 5.5em;
+}
+
 #calendar{
-  width: 600px;
+  padding-top: 12px;
+  margin: auto;
+  width: 90%;
 }
 
 
@@ -49,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .shadow {
-  box-shadow: 4px 4px 10px #777777;
+  box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.7)
 }
 
 p {
@@ -72,7 +101,9 @@ p {
   display: inline-block;
   position: fixed;
 }
+
 /* Here we goo! */
+
 .navbar-color{
   background-color: red;
   border-radius: 10px;
@@ -119,10 +150,6 @@ footer{
   word-wrap: break-word;
   width:400px auto;
 
-}
-
-.front-page{
-  background-color: #9E3B33
 }
 
 .navbar{

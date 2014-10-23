@@ -1,33 +1,52 @@
-<div class='container'>
-  <div class='teacher-photo'>
-  </div>
-  <div class='teacher-info'>
-      <p>Name: <%= @teacher.full_name %> </p>
-      <p>Email: <%= @teacher.email %> </p>
+<div class='teacher-body'>
+
+  <div class="teacher-info">
+    <div class='teacher-photo'></div>
+    <div>
+        <h4><%= @teacher.full_name %> </h4>
+        <h4><%= @teacher.email %> </h4>
+    </div>
   </div>
     <!-- dropdown menu for class list for the teacher -->
+  <div id="calander-body">
     
-    <div class='btn-group'>
+    <div>
+      <div class="calander-control">
+        <h1>Appointments</h1>
+        <div><%= link_to "Add Appointment", new_event_path(@event) %></div>
+      </div>
+      
+      <% @teacher.events.each do |event| %>
+
+      <p>
+        <%= "#{event.title}" %> | <%= link_to 'Remove', event, method: :delete, data: { confirm: 'Are you sure?' } %> <%= link_to 'Edit', edit_event_path(event) %>
+      </p>
+      <% end %> 
+    </div>
+
+    <div id='calendar'></div>
+  </div>
+</div> <!-- end of teacher body -->
+
+<div class="classes-body">
+  <div id="class-bar">
+    <h1>Classes</h1>
+  </div>
+  <div>
+    <% @teacher.classrooms.each do |classroom|  %>        
+      <%= link_to(classroom_path(classroom)) do %>
+        <div class="classroom"><h4> <%= "#{classroom.subject}" %> </h4></div>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
+
+<!-- <div class='btn-group'>
       <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
         Classrooms <span class="caret"></span>
       </button>
       <ul class='dropdown-menu' role='menu'>
-        <% @teacher.classrooms.each do |classroom|  %>        
-            <li><%= link_to "#{classroom.subject}", classroom_path(classroom)%></li>
-        <%end%>
+        
       </ul>
-    </div>
-
-    <p><%= link_to "Add Appointment", new_event_path(@event) %></p>
-    <% @teacher.events.each do |event| %>
-      <p><%= "#{event.title}" %> | <%= link_to 'Remove', event, method: :delete, data: { confirm: 'Are you sure?' } %> <%= link_to 'Edit', edit_event_path(event) %></p>
-
-    <% end %> 
-
-    <div id='calendar'></div>
-
-    
-</div>  <!-- end of container -->
-
-
-
+    </div> -->

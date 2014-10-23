@@ -22,12 +22,10 @@ ActiveRecord::Schema.define(version: 20141022184834) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "teacher_id"
     t.integer  "school_id"
   end
 
   add_index "classrooms", ["school_id"], name: "index_classrooms_on_school_id", using: :btree
-  add_index "classrooms", ["teacher_id"], name: "index_classrooms_on_teacher_id", using: :btree
 
   create_table "events", force: true do |t|
     t.string   "title"
