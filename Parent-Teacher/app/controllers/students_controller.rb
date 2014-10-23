@@ -21,6 +21,7 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
+    @student.parents.push(Parent.create(email: @student.email, password: rand(3456..7890) ))
 
 # decide where we want to redirect once a class room as been saved!
     # if @student.save

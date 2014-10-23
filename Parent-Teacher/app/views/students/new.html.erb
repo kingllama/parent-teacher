@@ -1,0 +1,22 @@
+<%# Student creation form - school access only %>
+
+<%= form_for @student, :html => { :multipart => true }, :class => 'form-horizontal' do |f| %>
+  <%= f.text_field :firstname, {:class => 'form-control', :placeholder => "First Name"} %>
+  <%= f.text_field :lastname, {:class => 'form-control', :placeholder => "Last Name"} %>
+  <%= f.select :grade, options_for_select(["Kindergarten", "Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5", "Grade 6", "Grade 7", "Grade 8", "Grade 9", "Grade 10","Grade 11", "Grade 12"]), {prompt: 'Grade (current school year)', :class => 'btn btn-default dropdown-toggle'} %>
+  <%= f.text_field :gender, {:class => 'form-control', :placeholder => "Gender"} %>
+  <%= f.text_field :address, {:class => 'form-control', :placeholder => "Address"} %>
+  <%= f.telephone_field :emergency_phone, {:class => 'form-control', :placeholder => "Emergency Contact Number"} %>
+  <%= f.hidden_field :school_id, {:class => 'form-control', :value => session[:school_id] } %>
+  <%= f.text_area :notes, {:class => 'form-control', :placeholder => 'Any special information about this student...'} %>
+  <%= f.file_field :avatar %>
+  <%= f.submit "Create New Student", {:class => 'btn btn-default'} %> 
+<% end %>
+
+<!--   
+ALL OF THESE THINGS NEED TO BE ADDRESSED: 
+    t.string   "emergency_phone" - emergency contact name and emergency contact relation and parent email
+    t.string   "student_evaluation" - add attachment for this type of file as well
+
+    columns to add: emergency contact name, emergency contact relation, parent email, evaluation attachment. 
+-->

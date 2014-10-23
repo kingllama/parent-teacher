@@ -5,7 +5,7 @@ class UserMailer < ActionMailer::Base
   def parent_signup_email(student)
     @student =  student
     @url = 'http://schoolbox.com/parent-signup' #not a valid url at this point
-    mail(to: @student.parent_email, subject: "Welcome to SchoolBox") #students currently do not have parent_email
+    mail(to: @student.parent_email, subject: "Welcome to SchoolBox") # students currently do not have parent_email
     # if this email is sent out on student creation, include some kind of validation to not send out this email if the parent has already received the email for another child
     # an alternative would be to send emails out after student creation and only send to unique email addresses
   end
