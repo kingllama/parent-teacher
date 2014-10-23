@@ -18,6 +18,16 @@
             </div> 
             <div class='child-name'>
               <span><%= student.firstname %>: </span>
+                <div class="btn-group dropup">
+                  <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Appointments<span class="caret"></span>
+                  </button>
+                    <% student.events.each do |event|%>
+                      <ul class="dropdown-menu" role="menu">
+                        <p><%=link_to "#{event.title}"%></p>
+                      </ul>
+                      <% end %>
+                </div>
+               
               <div class='child-button'>
                 <%= link_to "Classes", student_path(student), :class => 'btn btn-default' %>
               </div>
@@ -26,5 +36,10 @@
         <% end %>
       </div>
     </div>
+
+    <!-- displaying appointments with teachers for their child -->
+
+
+
 </div>  <!-- end container -->
 

@@ -17,6 +17,14 @@ class ApplicationController < ActionController::Base
     @admin_user ||= School.find_by(id: session[:school_id]) if session[:school_id]
   end
 
+  def teacher_user
+    @teacher_user ||= Teacher.find(id: session[:teacher_id]) if session[:teacher_id] 
+  end
+
+  def parent_user 
+    @parent_user ||= Parent.find(id: session[:parent_id]) if session[:parent_id]   
+  end
+
   def authorize
     unless admin_user
       flash[:error] = 'You have to be an admin to access this page.'

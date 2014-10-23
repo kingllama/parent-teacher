@@ -8,7 +8,6 @@ Bundler.require(*Rails.groups)
 
 module ParentTeacher
   class Application < Rails::Application
-    
-    
+  
   end
 end
