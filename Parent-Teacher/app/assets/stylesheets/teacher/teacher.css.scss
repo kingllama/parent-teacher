@@ -27,6 +27,8 @@
   left: 0px;
   background-color: white;
   padding: 20px;
+  position: absolute;
+  z-index: 5;
   // possible inner shadow to seperate the left and right containters
   // box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 }
@@ -55,8 +57,10 @@
 .classes-body {
   display: inline-block;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   width: 36%;
+  margin-left: 64%;
+  left: 0;
 }
 
 #class-bar {
