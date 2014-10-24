@@ -42,7 +42,6 @@ a div:hover {
 }
 
 html, body{
-  position: relative;
   z-index: -999;
   height: 100%;
   padding: 0px;
@@ -56,8 +55,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 bh1 {
+  font-family: 'Montserrat', sans-serif;
   margin: .67em 0;
   font-size: 5.5em;
+  text-align: center;
+}
+
+bh2 {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0em 0;
+  font-size: 3.5em;
+  text-align: center;
+  display: inherit;
 }
 
 #calendar{
@@ -102,57 +111,8 @@ p {
   position: fixed;
 }
 
-/* Here we goo! */
-
-.navbar-color{
-  background-color: red;
-  border-radius: 10px;
-  max-width: auto;
-}
-
-footer{
-  width:auto;
-  height:50px;
-  background-color: #E48743;
-
-    height:50px;
-    bottom:0px;
-    left:0px;
-    right:0px;
-    margin-bottom:0px;
-
-}
-
-.school-title{
-  font-size: 42px;
-  padding: 100px;
-}
-
-.about-section{
-  width:auto;
-  height:auto;
-  background-color: white;
-  padding: 50px;
-}
-
-.schoolbox-about{
-  text-align:center;
-  color: #261506;
-}
-
-.about-header{
-  width: 150px auto;
-}
-
-.about-paragraph{
-  font-weight: 300;
-  font-size: 1.1em;
-  word-wrap: break-word;
-  width:400px auto;
-
-}
-
-.navbar{
- 
-
-}
+.chosen-container-multi .chosen-choices {
+  min-height: 50px;
+  max-height: 330px;
+  overflow: auto !important;  /* Forgive me lord for I have sinned */
+};
