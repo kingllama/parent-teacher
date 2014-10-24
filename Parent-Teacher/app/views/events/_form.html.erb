@@ -11,7 +11,7 @@
     </div>
   <% end %>
   <section class='text-center'>
-    <div class='new-appointment-form borders shadow'>
+    <div class='new-appointment-form borders shadow top-left-border'>
       <div class="field">
         <%= f.label :title %><br>
         <%= f.text_field :title, :class => 'form-control' %>
@@ -32,8 +32,8 @@
         <%= f.label :student_id %><br>
         <%= f.text_area :student_id, :class => 'form-control' %>
       </div>
-      <div class="actions">
-        <%= f.submit 'Create Appointment', :class => 'btn btn-default text-center' %>
+      <div class='action'>
+        <%= f.submit 'Create Appointment', :class => 'btn btn-default text-center appointment-create' %>
       </div>
     </div>
   </section>

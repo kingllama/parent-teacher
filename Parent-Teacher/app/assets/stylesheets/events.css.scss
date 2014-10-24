@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
    
+
+   // Create/Edit Appointments
 .new-appointment-form {
   text-align: left;
   height: auto;
@@ -11,5 +13,39 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
-
   }
+
+.new-appointment-form div{
+  padding-bottom:20px;
+  }
+
+.appointment-create{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.appointment-header{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+
+// View Appointment
+
+.view-appointment{
+  text-align: left;
+  height: auto;
+  width: 400px;
+  background-color: white;
+  padding: 20px;
+  margin: auto;
+  display: block;
+}
+
+.appointment-container{
+  padding-top: 150px;
+}

@@ -1,28 +1,43 @@
 <p id="notice"><%= notice %></p>
+<section class='text-center appointment-container'>
+  <div class='view-appointment borders shadow'>
+    <div>
+      <label>Title:</label>
+      <%= @event.title %>
+    </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+    <div>
+      <label>Description:</label>
+      <%= @event.description %>
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+    <div>
+      <label>Start time:</label>
+      <%= @event.start_time.strftime("%b %d %l:%M %P") %>
+    </div>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @event.start_time %>
-</p>
+    <div>
+      <label>End time:</label>
+      <%= @event.end_time.strftime("%b %d %l:%M %P") %>
+    </div>
+    <div>
+      <label>Teacher:</label>
+      <%= @event.teacher%>
+    </div>
+    <div>
+      <label>Student:</label>
+      <%= @event.student%>
+    </div>
+    <div>
+      <label>Parent:</label>
+      <% @event.student.parents.each do |parent| %>
+        <%= parent.full_name %>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to 'Back', teacher_path(@event.teacher), :class => 'btn btn-default'%>
+    </div>
+  </div>
+</section>
 
-<p>
-  <strong>End time:</strong>
-  <%= @event.end_time %>
-</p>
-<p>
-  <strong>Teacher:</strong>
-  <%= @event.teacher%>
-</p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', teacher_path(@event.teacher)%>
