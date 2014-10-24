@@ -98,6 +98,7 @@
   float: left;
   margin-top: 0em;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .classroom-body-header h4 {
@@ -116,13 +117,15 @@
   position: absolute;
   top: 11%;
   left: 70%;
+  padding-top: 20px;
 }
 
 #remove-btn {
   float: right;
   position: absolute;
   top: 95%;
-  left: 70%;
+  left: 65%;
+ 
 }
 
 .student-checkbox {
