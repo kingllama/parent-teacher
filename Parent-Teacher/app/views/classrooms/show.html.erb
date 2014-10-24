@@ -2,63 +2,37 @@
   <bh2><%= @classroom.subject %></bh2>
 </div>
 
-  <div class="classroom-body">
-    <div class="classroom-body-header">
-      <h2><%=@teacher %></h2>
-      <h4>
-     (<%= link_to "Edit", edit_classroom_path(@classroom) %>,
-      <%= link_to "Delete", classroom_path(@classroom), method: :delete, data: {confirm: "You sure?"} %>)
-      </h4>
-    </div>
-    <br>
-    <div>
-      <div id="add-btn">
-        <%= submit_tag "Add Students" %>
-      </div>
-      <%= form_for @classroom do |f| %>
-        <%= select_tag :student_ids, options_from_collection_for_select(@students, "id", "full_name"), multiple: true, class: "chosen-select" %>
-    </div>
-    <div id="remove-btn">
-      <%= submit_tag "Remove students" %>
-    </div>
+<div class="classroom-body">
+  <div class="classroom-body-header">
+    <h2><%= @teacher %></h2>
   </div>
-
-  <div class="students-body">
-    <div id="students-bar"><h2>Students</h2></div>
-    <div class="student-scroll-box">
-       <% @classroom.students.each do |student| %>
-        <div class="individual-student">
-          <div class='student-photo'></div>
-          <div><input type="checkbox" name="ids_to_delete[]" value="<%= student.id %>" class="student-checkbox"/></div>
-          <h5><%= student %></h5>
-          <%= link_to(student_path(student)) do %>
-            <span class="glyphicon glyphicon-comment"></span>
-          <% end %>
-        </div>
-      <% end %>
+  <br>
+  <div>
+    <div id="add-btn">
+      <%= submit_tag "Add Students" %>
     </div>
+    <%= form_for @classroom do |f| %>
+      <%= select_tag :student_ids, options_from_collection_for_select(@students, "id", "full_name"), multiple: true, class: "chosen-select"%>
+  </div>
+  <div id="remove-btn">
+    <%= submit_tag "Remove students" %>
+  </div>
+</div>
 
+<div class="students-body">
+  <div id="students-bar"><h2>Students</h2></div>
+  <div class="student-scroll-box">
+     <% @classroom.students.each do |student| %>
+      <div class="individual-student">
+        <div class='student-photo'></div>
+        <div><input type="checkbox" name="ids_to_delete[]" value="<%= student.id %>" class="student-checkbox"/></div>
+        <h5><%= student %></h5>
+        <%= link_to(student_path(student)) do %>
+          <span class="glyphicon glyphicon-comment"></span>
+        <% end %>
+      </div>
     <% end %>
+  </div>
+  <% end %>
 </div>
-  <!--
-<div>
-  <table>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Name</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @classroom.students.each do |student| %>
-      <tr>
-        <td><input type="checkbox" name="ids_to_delete[]" value="<%= student.id %>"/></td>
-        <td><%= student %></td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-  <%#= submit_tag "Remove students" %>
-</div>
-<%= stylesheet_link_tag    'application', media: 'all', "data-turbolinks-track" => true %>
-<%= javascript_include_tag 'application', "data-turbolinks-track" => true %> -->
+  

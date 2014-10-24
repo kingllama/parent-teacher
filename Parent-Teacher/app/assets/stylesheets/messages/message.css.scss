@@ -24,16 +24,3 @@ padding-top: 150px;
   margin-top: 20px;
 }
 
-#file-uploader-container{
-position: relative;
-}
-#file-uploader-container .wrapper{
-    opacity: 0;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    z-index: -1;
-}
-#file-uploader-container .wrapper:hover{
-opacity: 0.5;
-}
