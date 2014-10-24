@@ -35,7 +35,7 @@ class MessagesController < ApplicationController
       
     if @message.save
       UserMailer.custom_email(current_sender, @message, @send_to).deliver
-      flash[:notice] = "Message sent!"
+      flash[:notice] = "Message sent!" #flashes not happening
       redirect_to root_path
     else
       flash[:notice] = "There was an error and this message could not be sent."
