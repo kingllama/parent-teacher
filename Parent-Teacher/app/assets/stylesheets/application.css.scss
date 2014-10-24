@@ -20,6 +20,7 @@
  @import "classroom/classroom.css.scss";
  @import "parent/parentdashboard.css.scss";
  @import "events.css.scss";
+ @import "messages/message.css.scss";
 
 a {
   color: #90CA77;
@@ -94,7 +95,7 @@ p {
 .logo {
   height: 90px;
   width: 90px;
-  left: 20px;
+  left: 12px;
   right: 0px;
   top: 20px;
   float: left;
@@ -103,57 +104,7 @@ p {
   position: fixed;
 }
 
-/* Here we goo! */
-
-.navbar-color{
-  background-color: red;
-  border-radius: 10px;
-  max-width: auto;
-}
-
-footer{
-  width:auto;
-  height:50px;
-  background-color: #E48743;
-
-    height:50px;
-    bottom:0px;
-    left:0px;
-    right:0px;
-    margin-bottom:0px;
-
-}
-
-.school-title{
-  font-size: 42px;
-  padding: 100px;
-}
-
-.about-section{
-  width:auto;
-  height:auto;
-  background-color: white;
-  padding: 50px;
-}
-
-.schoolbox-about{
-  text-align:center;
-  color: #261506;
-}
-
-.about-header{
-  width: 150px auto;
-}
-
-.about-paragraph{
-  font-weight: 300;
-  font-size: 1.1em;
-  word-wrap: break-word;
-  width:400px auto;
-
-}
-
-.navbar{
- 
-
+.top-left-border{
+  border-left:  4px solid #E48743;
+  border-top: 4px solid #E48743;
 }

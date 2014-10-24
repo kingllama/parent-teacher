@@ -1,0 +1,39 @@
+#message-form{
+padding-top: 150px;
+
+}
+
+.form-create-container {
+  width:50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-color: white;
+  padding:20px;
+  border-radius: 6px;
+  border-left:  4px solid #E48743;
+  border-top: 4px solid #E48743;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+.message-content div{
+  padding-bottom: 20px;
+}
+
+.message-submit{
+  margin-top: 20px;
+}
+
+#file-uploader-container{
+position: relative;
+}
+#file-uploader-container .wrapper{
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+#file-uploader-container .wrapper:hover{
+opacity: 0.5;
+}

@@ -22,9 +22,10 @@
 
 
 // CALENDAR JQUERY
-$(function() {
+$(document).on('ready page:load', function () {
+  
   $('#calendar').fullCalendar({
     events: '/events.json'
   });
-
+  
 });
