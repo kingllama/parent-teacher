@@ -22,11 +22,12 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     if @student.save
       find_parents(@student)
+      flash[:notice] = "Student successfully created!"
       redirect_to school_path(admin_user)
     else
-      redirect_to root_path
+      flash[:notice] = "There was an error and student was not created."
+      render :new
     end
-
   end
 
   def update
@@ -41,7 +42,7 @@ class StudentsController < ApplicationController
   def destroy
     @student = Student.find(params[:id])
     @student.destroy
-    # redirect_to somewhere
+    render :new
   end
 
 

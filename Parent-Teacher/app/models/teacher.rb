@@ -15,7 +15,3 @@ class Teacher < User
 
 end
 
-
-#  UPDATE "users" SET "school_id" = $1, "updated_at" = $2 WHERE "users"."id" = 1  [["school_id", 3], ["updated_at", "2014-10-23 20:55:37.656675"]]
-
-# Teacher Exists (1.5ms)  SELECT  1 AS one FROM "users"  WHERE "users"."type" IN ('Teacher') AND ("users"."email" = 'savanah.ward@yundt.net' AND "users"."id" != 35) LIMIT 1

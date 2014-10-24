@@ -21,11 +21,13 @@ class TeachersController < ApplicationController
     @teacher = Teacher.new(teacher_params) 
     default_password = admin_user.id * rand(10..40)
     @teacher.password = default_password
-    
+
     if @teacher.save
       UserMailer.teacher_welcome(admin_user, @teacher, @teacher.password).deliver
+      flash[:notice] = "Teacher successfully created!"
       redirect_to school_path(admin_user)
     else
+      flash[:notice] = "There was an error and teacher was not created."
       redirect_to root_path
     end
   end
