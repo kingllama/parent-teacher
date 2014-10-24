@@ -51,7 +51,6 @@ class TeachersController < ApplicationController
 protected
 
   def teacher_params
-# do we need to add timestamps?!?!!
     params.require(:teacher).permit(:firstname, :lastname, :email, :gender)
   end
 end
