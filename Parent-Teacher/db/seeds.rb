@@ -10,7 +10,6 @@ factory :user, class: 'User' do
   end
 
   factory :student, :parent => :user, :class =>'Student' do
-    sequence(:password) {"12345"}
   end
 
   factory :teacher, :parent => :user, :class =>'Teacher' do

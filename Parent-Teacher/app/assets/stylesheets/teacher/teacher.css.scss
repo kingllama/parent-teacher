@@ -27,6 +27,8 @@
   left: 0px;
   background-color: white;
   padding: 20px;
+  position: absolute;
+  z-index: 5;
 }
 
 #calander-body {
@@ -53,8 +55,10 @@
 .classes-body {
   display: inline-block;
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   width: 36%;
+  margin-left: 64%;
+  left: 0;
 }
 
 #class-bar {
