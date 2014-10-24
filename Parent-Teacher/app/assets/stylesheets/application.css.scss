@@ -20,6 +20,7 @@
  @import "classroom/classroom.css.scss";
  @import "parent/parentdashboard.css.scss";
  @import "events.css.scss";
+ @import "messages/message.css.scss";
 
 a {
   color: #90CA77;
@@ -46,7 +47,7 @@ html, body{
   z-index: -999;
   height: 100%;
   padding: 0px;
-  background-color: #85A3FF;
+  background-color: #a6d7e7;
   font-family: 'Lato', sans-serif;
 }
 
@@ -103,7 +104,7 @@ p {
 .logo {
   height: 90px;
   width: 90px;
-  left: 20px;
+  left: 12px;
   right: 0px;
   top: 20px;
   float: left;
@@ -112,8 +113,15 @@ p {
   position: fixed;
 }
 
+
 .chosen-container-multi .chosen-choices {
   min-height: 50px;
   max-height: 330px;
   overflow: auto !important;  /* Forgive me lord for I have sinned */
 };
+
+.top-left-border{
+  border-left:  4px solid #E48743;
+  border-top: 4px solid #E48743;
+}
+
