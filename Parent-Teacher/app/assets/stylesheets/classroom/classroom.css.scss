@@ -106,7 +106,7 @@
 }
 
 .student-scroll-box {
-  max-height: 570px;
+  max-height: 650px;
   width: 100%;
   overflow-y: auto;
 }
@@ -117,6 +117,7 @@
   top: 11;
   left: 70%;
   padding-top: 33px;
+
 }
 
 #remove-btn {
@@ -124,7 +125,7 @@
   position: absolute;
   top: 95%;
   left: 65%;
- 
+  display: none;
 }
 
 #select-form-box{

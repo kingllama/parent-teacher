@@ -9,7 +9,7 @@
   <br>
   <div>
     <div id="select-form-box">
-    <%= form_for @classroom do |f| %>
+    <%= form_for @classroom, :id => 'class_form_id' do |f| %>
       <%= select_tag :student_ids, options_from_collection_for_select(@students, "id", "full_name"), multiple: true, class: "chosen-select"%>
     </div>
     <div id="add-btn">
@@ -37,4 +37,20 @@
   </div>
   <% end %>
 </div>
+
+<script type="text/javascript">
+$(function(){
+
+$('.student-checkbox').on('click', function (argument) {
+  
+  if ($("class_form_id, input:checkbox:checked").length > 0){
+    console.log("worked");
+    $("#remove-btn").show();
+  }else{
+    console.log("worked2");
+     $("#remove-btn").hide();
+  };
+});
+});
+</script>
   
