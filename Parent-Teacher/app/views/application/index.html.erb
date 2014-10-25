@@ -13,21 +13,34 @@
       <p>SchoolBox is a digital toolbox to facilitate communication between teachers and parents/guardians. Teachers have access to class management tools, and parents have access to important information about their child's progress. Register your school today, or contact your school administrator to get started.
         <form action='/schools/new' method='get'><button class="btn btn-default">Register Your School</button></form>
       </p>
-
     </div>
 
     <div class="shadow container borders front-box" id="login-box">
-    <h3>Login</h3>
-      <div>
-        <%= form_tag session_path do %>
-        <br>
-        <%= text_field_tag :email, params[:email], { :class => "form-control", :placeholder => "Email"} %>
-        <br>
-        <%= password_field_tag :password, params[:password], { :class => "form-control", :placeholder => "Password"} %>
-        <br>
-        <%= submit_tag "Log In", :class => 'btn btn-default' %> <button class="btn btn-default btn-control">Sign Up</button>
-        <% end %>
-      </div>
+      <% if teacher_user || parent_user || admin_user %>
+        <h3>Get started!</h3>
+          <div>
+            <br>
+            <% if teacher_user %>
+              <%= button_to "View Dashboard", teacher_path(teacher_user), { method: "get", :class => "btn btn-default" } %>
+            <% elsif parent_user %>
+              <%= button_to "View Dashboard", parent_path(parent_user), { method: "get", :class => "btn btn-default" } %>
+            <% elsif admin_user %>
+              <%= button_to "View Dashboard", school_path(admin_user), { method: "get", :class => "btn btn-default" } %>
+            <% end %>
+          </div>
+      <% else %>
+        <h3>Login</h3>
+          <div>
+            <%= form_tag session_path do %>
+            <br>
+            <%= text_field_tag :email, params[:email], { :class => "form-control", :placeholder => "Email"} %>
+            <br>
+            <%= password_field_tag :password, params[:password], { :class => "form-control", :placeholder => "Password"} %>
+            <br>
+            <%= submit_tag "Log In", :class => 'btn btn-default' %> <button class="btn btn-default btn-control">Sign Up</button>
+            <% end %>
+          </div>
+      <% end %>
         
   </div>
   </div>
