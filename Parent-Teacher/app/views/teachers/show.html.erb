@@ -3,8 +3,9 @@
   <div class="teacher-info">
     <div class='teacher-photo'></div>
     <div>
-        <h4><%= @teacher.full_name %> </h4>
+        <h4><%= @teacher.full_name %></h4>
         <h4><%= @teacher.email %> </h4>
+        <img src='<%= @teacher.avatar_file_name %>'/>
     </div>
   </div>
     <!-- dropdown menu for class list for the teacher -->
