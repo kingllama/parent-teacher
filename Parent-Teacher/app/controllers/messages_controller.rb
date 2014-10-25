@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
       students = @sender.students
       get_parent_emails(students)
     elsif @message.recipients == "All teachers"
-      teachers = @sender.teachers # need to add school/teacher direct association
+      teachers = @sender.teachers 
       get_teacher_emails(teachers)
     else
       classroom = Classroom.where('subject LIKE ?', @message.recipients)
@@ -34,12 +34,13 @@ class MessagesController < ApplicationController
     end
       
     if @message.save
-      UserMailer.custom_email(@message, @send_to).deliver
+      UserMailer.custom_email(current_sender, @message, @send_to).deliver
+      flash[:notice] = "Message sent!" #flashes not happening
       redirect_to root_path
     else
+      flash[:notice] = "There was an error and this message could not be sent."
       render :new
     end
-
   end
 
   def update

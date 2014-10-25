@@ -1,6 +1,7 @@
 class Teacher < User
   
   # has_secure_password
+
   belongs_to :school
   has_many :classrooms, foreign_key: :user_id
   has_and_belongs_to_many :students, foreign_key: :teacher_id, join_table: :students_teachers
@@ -13,3 +14,4 @@ class Teacher < User
 
 
 end
+

@@ -100,21 +100,21 @@ end
 
 teachers.each do |teacher|
   teach = Teacher.new( firstname: teacher[0], lastname: teacher[1], email: teacher[2], gender: teacher[3])
-  teach.school = School.find(1)
+  teach.school = School.find_by(name: "Mayflower Elementary")
   teach.save
 end
 
 monica_classes.each do |c|
   cl = Classroom.new(subject: c[0])
-  cl.school = School.find(1)
-  cl.teacher = Teacher.find(3)
+  cl.school = School.find_by(name: "Mayflower Elementary")
+  cl.teacher = Teacher.find_by(firstname: 'Monica')
   cl.save
 end
 
 don_classes.each do |c|
   cl = Classroom.new(subject: c[0])
-  cl.school = School.find(1)
-  cl.teacher = Teacher.find(2)
+  cl.school = School.find_by(name: "Mayflower Elementary")
+  cl.teacher = Teacher.find_by(firstname: 'Don')
   cl.save
 end
 
@@ -136,37 +136,37 @@ end
 
 david_parents.each do |parent|
   dav = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3])
-  dav.students << Student.find_by(lastname: 'Armstrong')
+  dav.students << Student.where(lastname: 'Armstrong')
   dav.students << Student.last
   dav.save
 end
 
 shannon_parents.each do |parent|
   shan = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3])
-  shan.students << Student.find_by(lastname: 'Oden') 
+  shan.students << Student.where(lastname: 'Oden') 
   shan.save
 end
 
 chloe_parents.each do |parent|
   chlo = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3])
-  chlo.students << Student.find_by(lastname: 'Hunt') 
+  chlo.students << Student.where(lastname: 'Hunt') 
   chlo.save
 end
 
 andrew_parents.each do |parent|
   andy = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3])
-  andy.students << Student.find_by(lastname: 'Shepard')
+  andy.students << Student.where(lastname: 'Shepard')
   andy.save
 end
 
 patrick_parents.each do |parent|
   pat = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3])
-  pat.students << Student.find_by(lastname: 'Adams') 
+  pat.students << Student.where(lastname: 'Adams') 
   pat.save
 end
 
 bradley_parents.each do |parent|
   brad = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3])
-  brad.students << Student.find_by(lastname: 'Shelley')
+  brad.students << Student.where(lastname: 'Shelley')
   brad.save
 end
