@@ -5,8 +5,13 @@
         <h4><%= @student.full_name %> </h4>
         <h4>Gender: <%= @student.gender %> </h4>
     </div>
-    <p><%= @student.notes %></p>
   </div>
+    <div>
+      <% @student.notes.each do |note| %>
+        <p><strong><%= note.posted_by %>: </strong> <%= note.text %></p>
+        <p><em>Created on: <%= note.created_at.strftime("%b %e, %l:%M %p") %></em></p>
+      <% end %>
+    </div>
 </div>
 <div class="chat-body">
   <div id="chat-box">

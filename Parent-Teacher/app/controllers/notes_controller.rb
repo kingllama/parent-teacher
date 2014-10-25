@@ -16,6 +16,10 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(note_params)
+    if @note.save
+      #push note into student notes collection
+      #redirect somewhere
+    end
   end
 
   def update
@@ -31,5 +35,5 @@ class NotesController < ApplicationController
     def note_params
       params.require(:note).permit(:posted_by, :text, :student_id)
     end
-    
+
 end
