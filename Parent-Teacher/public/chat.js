@@ -21,12 +21,17 @@ var chat = {
 chat.connect();
 
 chat.channel.bind('message_event', function(incomingData){
+  var div = $("<div>").addClass("speech-bubble");
+  var parent_p = $("<p>");
+  var teacher_p = $("<p>");
   if (incomingData.userType === "Teacher"){
-    $('<p>').addClass('teacher-msg-name').text(incomingData.userName).appendTo('#chat-box');
-    $('<p>').addClass('teacher-msg').text(incomingData.message).appendTo('#chat-box');
+    teacher_p.addClass('teacher-msg-name').text(incomingData.userName);
+    teacher_p.addClass('teacher-msg').text(incomingData.message);
+    div.addClass('teacher-bubble').append(teacher_p);
   } else {
-    $('<p>').addClass('parent-msg-name').text(incomingData.userName).appendTo('#chat-box');
-    $('<p>').addClass('parent-msg').text(incomingData.message).appendTo('#chat-box');
+    parent_p.addClass('parent-msg-name').text(incomingData.userName);
+    parent_p.addClass('parent-msg').text(incomingData.message);
+    div.addClass('parent-bubble').append(parent_p);
   };
 });
 

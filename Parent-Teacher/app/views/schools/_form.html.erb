@@ -1,32 +1,27 @@
 <%= form_for @school do |f| %>
-  <div class='school-sign-in-holder'>
-    <h2 class='school-sign-in-header'>Register Your School</h2>
-      <div class='school-login-wrap'>
-        <div class='school-login-info'>
-          <div>
-            <%= f.label "name" %>
-            <%= f.text_field "name", :class => 'form-control small-input'  %>
-          <div>
-          <div>
-            <%= f.label "email" %>
-            <%= f.text_field "email", :class => 'form-control small-input'  %>
-          <div>
-          <div>
-            <%= f.label "address" %>
-            <%= f.text_field "address", :class => 'form-control small-input'  %>
-          <div>
-          <div>
-            <%= f.label "password" %><br>
-            <%= f.password_field "password", :class => 'form-control small-input' %>
-          </div>
-          <div>
-            <%= f.label "password_confirmation" %><br>
-            <%= f.password_field "password_confirmation", :class => 'form-control small-input' %>
-          </div>
-          <div>
-          <%= f.submit "Submit", :class => 'btn btn-danger'%> 
-          </div>
+<bh1 class='appointment-header'>Register Your School</bh1>
+  <section>
+    <div class='new-school-form borders shadow top-left-border'>
+      <div>
+        <div class='new-school'>
+          <%= f.text_field "name", {:class => 'form-control small-input', :placeholder => "Name"}  %>
+        </div>
+        <div class='new-school'>
+          <%= f.text_field "email", {:class => 'form-control small-input', :placeholder => "Email"}  %>
+        </div>
+        <div class='new-school'>
+          <%= f.text_field "address", {:class => 'form-control small-input', :placeholder => "Address"}  %>
+        </div>
+        <div class='new-school'>
+          <%= f.password_field "password", {:class => 'form-control small-input', :placeholder => "Password"} %>
+        </div>
+        <div class='new-school'>
+          <%= f.password_field "password_confirmation", {:class => 'form-control small-input', :placeholder => "Confirm Password"} %>
+        </div>
+        <div class='register-button'>
+        <%= f.submit "Register", :class => 'btn btn-warning'%> 
         </div>
       </div>
-    </div> 
+    </div>
+  </section> 
 <% end %>
