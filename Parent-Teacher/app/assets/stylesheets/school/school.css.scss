@@ -1,0 +1,34 @@
+.school-body {
+  background-color: white;
+  width: 82%;
+  height: 100%;
+  margin-left: 9%;
+}
+
+.school-body div {
+  height: 90%;
+}
+
+.school-col {
+  width: 25%;
+  display: inline-block;
+  float: right;
+  border-left: 1px dashed black;
+  padding: 8px;
+  padding-top: 0px;
+  height: 80%;
+  position: relative;
+}
+
+.school-col:nth-last-child(1) {
+  border-left: 0px;
+}
+
+.col-scroll {
+  left: 0;
+  right: 0;
+  position: absolute;
+  overflow: auto;
+  padding: 10px;
+  height: 70%;
+}

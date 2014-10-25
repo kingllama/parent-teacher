@@ -8,11 +8,13 @@
   </div>
   <br>
   <div>
+    <div id="select-form-box">
+    <%= form_for @classroom do |f| %>
+      <%= select_tag :student_ids, options_from_collection_for_select(@students, "id", "full_name"), multiple: true, class: "chosen-select"%>
+    </div>
     <div id="add-btn">
       <%= submit_tag "Add Students" %>
     </div>
-    <%= form_for @classroom do |f| %>
-      <%= select_tag :student_ids, options_from_collection_for_select(@students, "id", "full_name"), multiple: true, class: "chosen-select"%>
   </div>
   <div id="remove-btn">
     <%= submit_tag "Remove students" %>

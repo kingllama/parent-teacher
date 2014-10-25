@@ -17,6 +17,7 @@
  */
  @import "homepage/home.css.scss";
  @import "school/schoolsignup.css.scss";
+ @import "school/school.css.scss";
  @import "classroom/classroom.css.scss";
  @import "parent/parentdashboard.css.scss";
  @import "events.css.scss";
@@ -108,9 +109,9 @@ p {
   right: 0px;
   top: 20px;
   float: left;
+  position: fixed;
   z-index: 4;
   display: inline-block;
-  position: fixed;
 }
 
 
@@ -118,10 +119,14 @@ p {
   min-height: 50px;
   max-height: 330px;
   overflow: auto !important;  /* Forgive me lord for I have sinned */
-};
+}
 
 .top-left-border{
   border-left:  4px solid #E48743;
   border-top: 4px solid #E48743;
 }
 
+.fc-event {
+  background-color: #90CA77 !important;
+  border: 1px solid #90CA77 !important;
+}

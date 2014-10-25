@@ -1,7 +1,56 @@
-<bh2>Hello, School Admin!</bh2>
 
-<%= link_to "Add a classroom", new_classroom_path %>
 
-<% @school.students.each do |student| %>
-  <%= student.firstname %>
-<% end %>
+<div class="school-body">
+  <bh2 id="school-top">Hello, School Admin!</bh2>
+  <div>
+    <div class="school-col">
+      <h2>Teachers</h2>
+      <div class="col-scroll">
+        <div>
+          <h5> <%= link_to "Add a teacher", new_classroom_path %> </h5>
+
+          <% @school.teachers.each do |teacher| %>
+            <%= teacher.full_name %>
+            <br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="school-col">
+      <h2>Students</h2>
+      <div class="col-scroll">
+        <div>
+          <h5> <%= link_to "Add a student", new_classroom_path %> </h5>
+
+          <% @school.students.each do |student| %>
+            <%= student.full_name %>
+            <br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="school-col">
+      <h2>Classrooms</h2>
+      <div class="col-scroll">
+        <div>
+          <h5> <%= link_to "Add a classroom", new_classroom_path %> </h5>
+          <% @school.classrooms.each do |classroom| %>
+            <%= classroom.subject %> : 
+            <%= @school.teachers.find(classroom.user_id) %>
+            <br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="school-col">
+      <h2>Dashboard</h2>
+      <div class="col-scroll">
+        <div><h5> not sure </h5>
+
+          what goes here yet</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
