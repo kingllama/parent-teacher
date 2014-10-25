@@ -30,8 +30,10 @@
     </div>
     <div>
       <label>Parent:</label>
-      <% @event.student.parents.each do |parent| %>
-        <%= parent.full_name %>
+      <% if @event.student.parents %>
+        <% @event.student.parents.each do |parent| %>
+          <%= parent.full_name %>
+        <% end %>
       <% end %>
     </div>
     <div>

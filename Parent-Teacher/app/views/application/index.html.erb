@@ -16,17 +16,35 @@
     </div>
 
     <div class="shadow container borders front-box" id="login-box">
-    <h3>Login</h3>
-      <div>
-        <%= form_tag session_path do %>
-        <br>
-        <%= text_field_tag :email, params[:email], { :class => "form-control", :placeholder => "Email"} %>
-        <br>
-        <%= password_field_tag :password, params[:password], { :class => "form-control", :placeholder => "Password"} %>
-        <br>
-        <%= submit_tag "Log In", :class => 'btn btn-default' %>
-        <% end %>
-      </div>    
-    </div>
+      <% if current_user || admin_user %>
+        <h3>Get started!</h3>
+          <div>
+            <br>
+            <% if current_user.type == "Teacher" %>
+              <%= button_to "View Dashboard", teacher_path(current_user), { method: "get", :class => "btn btn-default" } %>
+            <% elsif current_user.type == "Parent" %>
+              <%= button_to "View Dashboard", parent_path(current_user), { method: "get", :class => "btn btn-default" } %>
+            <% elsif admin_user %>
+              <%= button_to "View Dashboard", school_path(admin_user), { method: "get", :class => "btn btn-default" } %>
+            <% end %>
+            <%= button_to "Log out", session_path("current"), { method: "delete", :class => "btn btn-default" } %>
+          </div>
+      <% else %>
+        <h3>Login</h3>
+          <div>
+            <%= form_tag session_path do %>
+            <br>
+            <%= text_field_tag :email, params[:email], { :class => "form-control", :placeholder => "Email"} %>
+            <br>
+            <%= password_field_tag :password, params[:password], { :class => "form-control", :placeholder => "Password"} %>
+            <br>
+            <%= submit_tag "Log In", :class => 'btn btn-default' %> <button class="btn btn-default btn-control">Sign Up</button>
+            <% end %>
+          </div>
+      <% end %>
+        
   </div>
+  </div>
+
 </div>
+

@@ -45,10 +45,12 @@ a div:hover {
 }
 
 html, body{
-  z-index: -999;
   height: 100%;
-  padding: 0px;
-  background-color: #a6d7e7;
+  background-image: url('faded-borderfix.png');
+  left: 0;
+  right: 0;
+  z-index: 1;
+  position: fixed;
   font-family: 'Lato', sans-serif;
 }
 
