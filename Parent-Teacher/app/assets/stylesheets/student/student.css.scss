@@ -88,6 +88,7 @@
   clear: both;
   margin-bottom: 0px;
   font-weight: bold;
+
 }
 
 .parent-msg-name {
@@ -113,26 +114,29 @@ margin-top: 50px;
 }
 
 .show-notes div{
-
   padding: 10px;
   border-radius: 5px;
 }
 
 .speech-bubble{
-  height: 200px;
-  width: 200px;
+  width: 300px; 
+  height: auto;
   background-color: white;
   border-radius: 10px;
+  margin-bottom: 5px; 
+  padding: 10px;
+  word-wrap: break-word;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 }
+
 .teacher-bubble{
-  height: 200px;
-  width: 200px;
+  height: auto;
   background-color: white;
   border-radius: 10px;
 }
 .parent-bubble{
-  height: 200px;
-  width: 200px;
+  height: auto;
   background-color: white;
   border-radius: 10px;
 }
