@@ -4,9 +4,6 @@ class NotesController < ApplicationController
     @notes = Note.all
   end
 
-  def show
-  end
-
   def new
     @note = Note.new
   end
@@ -17,8 +14,7 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
     if @note.save
-      #push note into student notes collection
-      #redirect somewhere
+      redirect_to student_path(@note.student_id)
     end
   end
 

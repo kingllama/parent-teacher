@@ -52,7 +52,7 @@
 
 .student-body {
   display: inline-block;
-  width: 40%;
+  width: 43%;
   height: 100%;
   margin-left: 9%;
   left: 0px;
@@ -147,6 +147,32 @@ margin-top: 50px;
 }
 
 
+// Student Notes
+
+.note-content{
+  height: 65%;
+  margin-top: 10px;
+  overflow-y: scroll;
+  border: 2px solid #b3dcea;
+  padding: 10px;
+  border-radius:4px;
+}
+
+
+.note-form{
+  padding: 20px;
+  margin-top: 45px;
+}
+
+.note-display{
+  margin-top: 20px;
+  padding:10px;
+}
+
+.note-submission{
+  padding-top: 10px;
+  text-align: right;
+}
 
 
 

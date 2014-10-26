@@ -6,6 +6,7 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+
     #set session: channel name to student.id
     render "show"
   end
@@ -32,11 +33,11 @@ class StudentsController < ApplicationController
 
   def update
     @student = Student.find(params[:id])
-      # if @student.update_attributes(student_params)
-      #   redirect_to somewhere
-      # else 
-      #   render :edit
-      # end
+      if @student.update_attributes(student_params)
+        redirect_to school_path(current_user)
+      else 
+        render :edit
+      end
   end
 
   def destroy
@@ -49,7 +50,7 @@ class StudentsController < ApplicationController
 protected
 
   def student_params
-    params.require(:student).permit(:firstname, :lastname, :grade, :gender, :address, :parent_email, :emergency_contact_name, :emergency_contact_relation, :emergency_phone, :school_id, :notes, :avatar, :evaluation)
+    params.require(:student).permit(:firstname, :lastname, :grade, :gender, :address, :parent_email, :emergency_contact_name, :emergency_contact_relation, :emergency_phone, :school_id, :avatar, :evaluation)
   end
 
   def find_parents(student)
