@@ -1,9 +1,11 @@
+<!-- Left Side of the student show -->
 <div class="student-body">
   <div class="student-info">
-    <div class='single-student-photo'></div>
+    <div class='single-student-photo'>
+    </div>
     <div>
-        <h4><%= @student.full_name %> </h4>
-        <h4>Gender: <%= @student.gender %> </h4>
+      <h4><%= @student.full_name %> </h4>
+      <h4>Gender: <%= @student.gender %> </h4>
     </div>
   </div>
     <div>
@@ -13,6 +15,8 @@
       <% end %>
     </div>
 </div>
+
+<!-- Chat BOX -->
 <div class="chat-body">
   <div id="chat-box">
     <div id="chat-control-box"></div>
