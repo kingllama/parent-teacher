@@ -40,17 +40,15 @@
 
 <script type="text/javascript">
 $(function(){
-
-$('.student-checkbox').on('click', function (argument) {
-  
-  if ($("class_form_id, input:checkbox:checked").length > 0){
-    console.log("worked");
-    $("#remove-btn").show();
-  }else{
-    console.log("worked2");
-     $("#remove-btn").hide();
-  };
-});
+  $('.student-checkbox').on('click', function (argument) {    
+    if ($("class_form_id, input:checkbox:checked").length > 0){
+      console.log("worked");
+      $("#remove-btn").show();
+    }else{
+      console.log("worked2");
+       $("#remove-btn").hide();
+    };
+  });
 });
 </script>
   

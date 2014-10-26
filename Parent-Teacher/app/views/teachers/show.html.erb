@@ -1,3 +1,4 @@
+
 <div class='teacher-body'>
 
   <div class="teacher-info">
@@ -5,6 +6,7 @@
     <div>
         <h4><%= @teacher.full_name %> </h4>
         <h4><%= @teacher.email %> </h4>
+        <h4><%= link_to "edit info", edit_teacher_path %></h4>
     </div>
   </div>
     <!-- dropdown menu for class list for the teacher -->

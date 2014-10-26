@@ -1,15 +1,26 @@
-<div class='container'>
-  <div class='parent-photo'>
-  </div>
-    <div class='parent-info'>
-      <p>Name: <%= current_user.firstname %> <%= current_user.lastname %> </p>
-      <p>Email: <%= current_user.email %> </p>
-      <p>Address: <%= current_user.address %> </p>
-      <p>Phonenumber: <%= current_user.emergency_phone %> </p>
+<div class="parent-body">
+  <!-- <div class='parent-photo'></div>
+  <div class='parent-info'>
+    <p>Name: <%= @parent.firstname %> <%= @parent.lastname %> </p>
+    <p>Email: <%= @parent.email %> </p>
+    <p>Address: <%= @parent.address %> </p>
+    <p>Phonenumber: <%= @parent.emergency_phone %> </p>
+  </div> -->
+  <div class="parent-info">
+    <div class='parent-photo'></div>
+    <div>
+        <h4>Name: <%= @parent.full_name %> </h4>
+        <h4>Email: <%= @parent.email %> </h4>
+        <h4>Address: <%= @parent.address %> </h4>
+        <h4>Phonenumber: <%= @parent.emergency_phone %> </h4>
+        <h4><%= link_to "edit info", edit_parent_path %></h4>
     </div>
-    <hr>
+  </div>
+
+  <hr>
+  <h3>Your Children:</h3>
+  <div class="child-scroll">
     <div class='row'>
-    <h3 style='padding-left: 25px;'>Your Children:</h3>
       <div class='col-md-12'>
         <% @parent.students.each do |student|  %>
           <div class='child-info'>
@@ -17,7 +28,7 @@
             <!-- insert student.photo --><img src='<%= student.avatar %>'>
             </div> 
             <div class='child-name'>
-              <span><%= student.firstname %>: </span>
+              <span><%= link_to student.firstname, student_path(student)%></span>
                 <div class="btn-group dropup">
                   <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Appointments<span class="caret"></span>
                   </button>
@@ -29,13 +40,14 @@
                 </div>
                
               <div class='child-button'>
-                <%= link_to "Classes", student_path(student), :class => 'btn btn-default' %>
+                
               </div>
             </div>
           </div>
         <% end %>
       </div>
     </div>
+  </div>
 
     <!-- displaying appointments with teachers for their child -->
 
