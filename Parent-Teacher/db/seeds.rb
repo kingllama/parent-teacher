@@ -6,11 +6,11 @@ schools=[
 ]
 
 teachers = [
-  ['Donna','Gordon','Dgordon@gmail.com', 'F', File.new("#{Rails.root}/app/assets/images/teachers/teacher-female2.jpg")],
-  ['Don','Borks','Dborks@gmail.com', 'M', File.new("#{Rails.root}/app/assets/images/teachers/teacher-female2.jpg")],
-  ['Monica','Ballinescu','Mballinescu@gmail.com', 'F', File.new("#{Rails.root}/app/assets/images/teachers/teacher-female2.jpg")],
-  ['Suzanne','Morgan','Smorgan@gmail.com', 'F', File.new("#{Rails.root}/app/assets/images/teachers/teacher-female2.jpg")],
-  ['Freddrick','Summers','Fsummers@gmail.com', 'M', File.new("#{Rails.root}/app/assets/images/teachers/teacher-female2.jpg")]
+  ['Donna','Gordon','Dgordon@gmail.com', 'F', 'teachers/teacher-female2.jpg'],
+  ['Don','Borks','Dborks@gmail.com', 'M', 'teachers/teacher-male2.jpg'],
+  ['Monica','Ballinescu','Mballinescu@gmail.com', 'F', 'teachers/teacher-female.jpg'],
+  ['Suzanne','Morgan','Smorgan@gmail.com', 'F', 'teachers/teacher-female3.jpg'],
+  ['Freddrick','Summers','Fsummers@gmail.com', 'M', 'teachers/teacher-male.jpg']
 ]
 
 monica_classes = [
@@ -99,7 +99,7 @@ end
 
 
 teachers.each do |teacher|
-  teach = Teacher.new( firstname: teacher[0], lastname: teacher[1], email: teacher[2], gender: teacher[3], avatar: teacher[4])
+  teach = Teacher.new( firstname: teacher[0], lastname: teacher[1], email: teacher[2], gender: teacher[3], avatar_file_name: teacher[4])
   teach.school = School.find_by(name: "Mayflower Elementary")
   teach.save
 end
@@ -170,3 +170,7 @@ bradley_parents.each do |parent|
   brad.students << Student.where(lastname: 'Shelley')
   brad.save
 end
+
+
+## Add some notes for students too
+## events are probably easier to add in-system
