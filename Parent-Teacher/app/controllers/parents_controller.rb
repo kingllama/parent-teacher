@@ -1,10 +1,24 @@
 class ParentsController < ApplicationController
+before_action :require_login
+before_action :authorize, only: [:index, :create, :update, :destroy]
+  
   def index
-    @parents = Parent.all
+    if admin_user
+      @parents = Parent.where(school_id: admin_user)
+    else
+      redirect_to root_path, notice: "You can't access this page." 
+    end
   end
 
   def show
-    @parent = Parent.find(params[:id])
+    if admin_user
+      @parent = Parent.find(params[:id])
+    elsif current_user.type == "Parent"
+      @parent = Parent.find(current_user)
+    else
+      redirect_to root_path, notice: "You can't access this page."   
+    end
+    
   end
 
   def new

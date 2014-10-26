@@ -1,7 +1,9 @@
 class SchoolsController < ApplicationController
+  before_action :require_login
+  before_action :authorize
   
   def index
-    @schools = School.all
+    @schools = School.where(school_id: admin_user)
   end
 
   def show

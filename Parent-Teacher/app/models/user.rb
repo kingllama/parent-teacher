@@ -21,4 +21,5 @@ class User < ActiveRecord::Base
     full_name
   end
 
+    
 end
