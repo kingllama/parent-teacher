@@ -14,7 +14,7 @@
         <% @parent.students.each do |student|  %>
           <div class='child-info'>
             <div>
-            <!-- insert student.photo --><img src='<%= student.avatar %>'>
+              <%= image_tag(student.avatar_file_name) %>
             </div> 
             <div class='child-name'>
               <span><%= student.firstname %>: </span>

@@ -55,41 +55,41 @@ bradley_parents = [
 ]
 
 first_students = [
-  ['David','Armstrong','M'],
-  ['Alexander','Adams','M'],
-  ['Brendan','Sadler','M'],
-  ['Marlon','Shelley','M'],
-  ['Daniel','Donaldson''M'],
-  ['Kieran','Oliver','M'],
-  ['Shannon','Oden','F'],
-  ['Chloe','Hunt','F'],
-  ['Taylor','Dion','F'],
-  ['Julie','Cooke','F'],
-  ['Hannah','Omalley','F'],
-  ['Augustus','Duchaump','M'],
-  ['Patrick','Adams','M'],
-  ['Sean','Sadler','M'],
-  ['Bradley','Shelley','M'],
-  ['Andrew','Shepard','M'],
-  ['Chris','Oliver','M'],
-  ['Don','Oden''M'],
-  ['Sylvia','Hunt','F'],
+  ['David','Armstrong','M','students/boy-gr3.jpeg', 4],
+  ['Alexander','Adams','M','students/boy-young12.jpg', 4],
+  ['Brendan','Sadler','M','students/boy-young3.jpg', 4],
+  ['Marlon','Shelley','M','students/boy-young4.jpg', 4],
+  ['Daniel','Donaldson''M','students/boy-young5.jpg', 4],
+  ['Kieran','Oliver','M','students/boy-young8.jpg', 4],
+  ['Shannon','Oden','F','students/shannon.jpg', 4],
+  ['Chloe','Hunt','F','students/girl-young4.jpg', 4],
+  ['Taylor','Dion','F','students/girl-young2.jpg', 4],
+  ['Julie','Cooke','F','students/girl-older.jpg', 11],
+  ['Hannah','Omalley','F','students/girl-young10.jpg', 4],
+  ['Augustus','Duchaump','M','students/boy-young6.jpg', 4],
+  ['Patrick','Adams','M','students/boy-young13.jpg', 4],
+  ['Sean','Sadler','M','students/boy-young10.jpg', 4],
+  ['Bradley','Shelley','M','students/boy-young2.jpg', 4],
+  ['Andrew','Shepard','M','students/boy-young14.jpg', 4],
+  ['Chris','Oliver','M','students/boy-young9.jpg', 4],
+  ['Don','Oden''M','students/boy-young11.jpg', 4],
+  ['Sylvia','Hunt','F','students/boy-young8.jpg', 4],
 ]
 second_students = [
-  ['Topaz','Dion','F'],
-  ['Romila','Cooke','F'],
-  ['Zach','Omalley','M'],  
-  ['Phil','Walker','M'],
-  ['Ali','Hall','F'],
-  ['Sheldon','Young','M'],
-  ['Matthew','King','M'],
-  ['Robert','Bennett','M'],
-  ['Thomas','Dyakowski','M'],
-  ['Harrison','Mitchell','M'],
-  ['Megan','Baker','F'],
-  ['Allison','Wright','F'],
-  ['Margret','Green','F'],
-  ['Elizabeth','Carter','F']
+  ['Topaz','Dion','F','students/girl-young10.jpg', 4],
+  ['Romila','Cooke','F','students/girl-young5.jpg', 4],
+  ['Zach','Omalley','M','students/boy-young7.jpg', 4],  
+  ['Phil','Walker','M','students/boy-young2.jpg', 4],
+  ['Ali','Hall','F','students/boy-young5.jpg', 4],
+  ['Sheldon','Young','M','students/boy-young9.jpg', 4],
+  ['Matthew','King','M','students/boy-young6.jpg', 4],
+  ['Robert','Bennett','M','students/boy-gr3.jpeg', 4],
+  ['Thomas','Dyakowski','M','students/boy-young7.jpg', 4],
+  ['Harrison','Mitchell','M','students/boy-young11.jpg', 4],
+  ['Megan','Baker','F','students/girl-young.jpg', 4],
+  ['Allison','Wright','F','students/girl-young14.jpg', 4],
+  ['Margret','Green','F','students/girl-young13.jpg', 4],
+  ['Elizabeth','Carter','F','students/girl-young12.jpg', 4]
 ]
 
 
@@ -119,7 +119,7 @@ don_classes.each do |c|
 end
 
 first_students.each do |student|
-  child = Student.new( firstname: student[0], lastname: student[1], gender: student[2])
+  child = Student.new( firstname: student[0], lastname: student[1], gender: student[2], avatar_file_name: student[3], grade: student[4])
   child.teachers << Teacher.find_by(firstname: 'Monica')
   child.school = School.find_by(name: 'Mayflower Elementary')
   child.classrooms << Classroom.find(1,2,3,4,5)
@@ -127,7 +127,7 @@ first_students.each do |student|
 end
 
 second_students.each do |student|
-  child = Student.new( firstname: student[0], lastname: student[1], gender: student[2])
+  child = Student.new( firstname: student[0], lastname: student[1], gender: student[2], avatar_file_name: student[3], grade: student[4])
   child.teachers << Teacher.find_by(firstname: 'Don')
   child.school = School.find_by(name: 'Mayflower Elementary')
   child.classrooms << Classroom.find(6,7,8,9,10)

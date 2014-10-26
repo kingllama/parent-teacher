@@ -1,6 +1,6 @@
 <div class="student-body">
   <div class="student-info">
-    <div class='single-student-photo'></div>
+    <div class='single-student-photo'><%= image_tag(@student.avatar_file_name) %></div>
     <div>
         <h4><%= @student.full_name %> </h4>
         <h4>Gender: <%= @student.gender %> </h4>
