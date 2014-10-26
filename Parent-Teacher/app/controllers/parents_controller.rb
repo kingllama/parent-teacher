@@ -29,11 +29,11 @@ class ParentsController < ApplicationController
 
   def update
     @parent = Parent.find(params[:id])
-      # if @parent.update_attributes(parent_params)
-      #   redirect_to somewhere
-      # else 
-      #   render :edit
-      # end
+      if @parent.update_attributes(parent_params)
+        redirect_to parent_path(current_user)
+      else 
+        render :edit
+      end
   end
 
   def destroy

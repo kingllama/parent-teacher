@@ -7,12 +7,18 @@
       <h4>Gender: <%= @student.gender %> </h4>
     </div>
   </div>
-    <div>
-      <% @student.notes.each do |note| %>
-        <p><strong><%= note.posted_by %>: </strong> <%= note.text %></p>
-        <p><em>Created on: <%= note.created_at.strftime("%b %e, %l:%M %p") %></em></p>
-      <% end %>
-    </div>
+      <div class='note-form'>
+        <%=render 'note' %>
+      </div>
+        <div class='note-content'>
+          <% @student.notes.each do |note| %>
+          <div class='borders top-left-border note-display'>
+            <p><strong><%= note.posted_by %>: </strong> <%= note.text %></p>
+            <p><em>Created on: <%= note.created_at.strftime("%b %e, %l:%M %p") %></em></p>
+          </div>
+          <% end %>
+      </div>
+    
 </div>
 
 <!-- Chat BOX -->

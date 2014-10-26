@@ -1,0 +1,33 @@
+<div class='new-teacher-form borders top-left-border'>
+    <%= form_for @teacher, :html => { :multipart => true }, :class => 'form-horizontal' do |f| %>
+      <div class='new-teacher-input div'>
+        <div>
+        <%= f.text_field :firstname, {:class => 'form-control', :placeholder => "First Name"} %>
+        </div>
+        <div>
+        <%= f.text_field :lastname, {:class => 'form-control', :placeholder => "Last Name"} %>
+        </div>
+        <div>
+        <%= f.text_field :email, {:class => 'form-control', :placeholder => "Email"} %>
+        </div>
+        <div>
+        <%= f.text_field :address, {:class => 'form-control', :placeholder => "Address"} %>
+        </div>
+        <div>
+        <%= f.telephone_field :phone, {:class => 'form-control', :placeholder => "Primary Phone Number"} %>
+        </div>
+        <div>
+        <%= f.hidden_field :school_id, {:class => 'form-control', :value => session[:school_id] } %>
+        </div>
+        <div>
+        <%= f.label(:avatar, "Upload a photo: ") %>
+        </div>
+        <div>
+        <%= f.file_field :avatar %>
+        </div>
+        <div>
+        <%= f.submit "Create Teacher", {:class => 'btn btn-warning'} %> 
+        </div>
+      </div>
+    <% end %>
+</div>

@@ -34,11 +34,11 @@ class TeachersController < ApplicationController
 
   def update
     @teacher = Teacher.find(params[:id])
-      # if @teacher.update_attributes(teacher_params)
-      #   redirect_to somewhere
-      # else 
-      #   render :edit
-      # end
+      if @teacher.update_attributes(teacher_params)
+        redirect_to teacher_path(current_user)
+      else 
+        render :edit
+      end
   end
 
   def destroy

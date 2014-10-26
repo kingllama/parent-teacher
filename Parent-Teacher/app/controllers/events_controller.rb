@@ -28,8 +28,6 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-    require 'pry'
-    binding.pry
     @event.teacher_id = current_user.id
 
 
