@@ -1,4 +1,30 @@
+// Teacher New
 
+.new-teacher-header{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+.new-teacher-form{
+  text-align: left;
+  height: auto;
+  width: 400px;
+  background-color: white;
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.new-teacher-input div{
+  padding-top:10px;
+}
+
+
+// teacher show
 .teacher-photo{
   display:inline-block;
   height: 70px;
@@ -90,3 +116,7 @@
 .classroom:first-child {
   margin-top: 40px;
 }
+
+
+
+

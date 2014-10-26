@@ -1,12 +1,34 @@
-<%# Teacher creation form - school access only %>
+<bh1 class='new-teacher-header'>Create a Teacher</bh1>
+<div class='new-teacher-form borders top-left-border'>
 <%= form_for @teacher, :html => { :multipart => true }, :class => 'form-horizontal' do |f| %>
-  <%= f.text_field :firstname, {:class => 'form-control', :placeholder => "First Name"} %>
-  <%= f.text_field :lastname, {:class => 'form-control', :placeholder => "Last Name"} %>
-  <%= f.text_field :email, {:class => 'form-control', :placeholder => "Email"} %>
-  <%= f.text_field :address, {:class => 'form-control', :placeholder => "Address"} %>
-  <%= f.telephone_field :phone, {:class => 'form-control', :placeholder => "Primary Phone Number"} %>
-  <%= f.hidden_field :school_id, {:class => 'form-control', :value => session[:school_id] } %>
-  <%= f.label(:avatar, "Upload a photo: ") %>
-  <%= f.file_field :avatar %>
-  <%= f.submit "Create New Teacher", {:class => 'btn btn-default'} %> 
+  <div class='new-teacher-input div'>
+    <div>
+    <%= f.text_field :firstname, {:class => 'form-control', :placeholder => "First Name"} %>
+    </div>
+    <div>
+    <%= f.text_field :lastname, {:class => 'form-control', :placeholder => "Last Name"} %>
+    </div>
+    <div>
+    <%= f.text_field :email, {:class => 'form-control', :placeholder => "Email"} %>
+    </div>
+    <div>
+    <%= f.text_field :address, {:class => 'form-control', :placeholder => "Address"} %>
+    </div>
+    <div>
+    <%= f.telephone_field :phone, {:class => 'form-control', :placeholder => "Primary Phone Number"} %>
+    </div>
+    <div>
+    <%= f.hidden_field :school_id, {:class => 'form-control', :value => session[:school_id] } %>
+    </div>
+    <div>
+    <%= f.label(:avatar, "Upload a photo: ") %>
+    </div>
+    <div>
+    <%= f.file_field :avatar %>
+    </div>
+    <div>
+    <%= f.submit "Create New Teacher", {:class => 'btn btn-warning'} %> 
+    </div>
+  </div>
+</div>
 <% end %>

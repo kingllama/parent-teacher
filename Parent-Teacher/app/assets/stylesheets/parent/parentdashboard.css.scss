@@ -29,8 +29,8 @@
 }
 
 .child-info{
-  width: 200px;
-  height: 250px;
+  width: 250px;
+  height: 300px;
   padding:20px;
   border-radius: 5px;
   background-color: #E48743;
@@ -60,6 +60,7 @@
   display: inline-block;
 }
 
-.child-scroll {
-  height: 100px;
+.appointment-list{
+  padding-top: 20px;
+  position:absolute;
 }

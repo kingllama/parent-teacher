@@ -1,8 +1,8 @@
 
 <div class='teacher-body'>
-
   <div class="teacher-info">
-    <div class='teacher-photo'></div>
+    <div class='teacher-photo'>
+    </div>
     <div>
         <h4><%= @teacher.full_name %> </h4>
         <h4><%= @teacher.email %> </h4>
@@ -11,21 +11,12 @@
   </div>
     <!-- dropdown menu for class list for the teacher -->
   <div id="calander-body">
-    
     <div>
       <div class="calander-control">
         <h1>Appointments</h1>
         <div><%= link_to "Add Appointment", new_event_path(@event) %></div>
       </div>
-      
-      <% @teacher.events.each do |event| %>
-
-      <p>
-        <%= "#{event.title}" %> | <%= link_to 'Remove', event, method: :delete, data: { confirm: 'Are you sure?' } %> <%= link_to 'Edit', edit_event_path(event) %>
-      </p>
-      <% end %> 
     </div>
-
     <div id='calendar'></div>
   </div>
 </div> <!-- end of teacher body -->
@@ -41,6 +32,4 @@
       <% end %>
     <% end %>
   </div>
-
 </div>
-
