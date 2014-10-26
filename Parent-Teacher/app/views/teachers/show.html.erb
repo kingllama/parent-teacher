@@ -1,16 +1,11 @@
 
 <div class='teacher-body'>
   <div class="teacher-info">
-    <div class='teacher-photo'>
-    </div>
+    <div class='teacher-photo'><%= image_tag(@teacher.avatar_file_name) %></div>
     <div>
         <h4><%= @teacher.full_name %></h4>
         <h4><%= @teacher.email %> </h4>
-<<<<<<< HEAD
-        <img src='<%= @teacher.avatar_file_name %>'/>
-=======
         <h4><%= link_to "edit info", edit_teacher_path %></h4>
->>>>>>> 33ee2da73b3f78e402edfbd13a3bb551d7c6bc37
     </div>
   </div>
     <!-- dropdown menu for class list for the teacher -->

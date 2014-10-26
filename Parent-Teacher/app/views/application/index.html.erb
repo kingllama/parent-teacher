@@ -27,6 +27,7 @@
             <% elsif admin_user %>
               <%= button_to "View Dashboard", school_path(admin_user), { method: "get", :class => "btn btn-default" } %>
             <% end %>
+            <br>
             <%= button_to "Log out", session_path("current"), { method: "delete", :class => "btn btn-default" } %>
           </div>
       <% else %>
