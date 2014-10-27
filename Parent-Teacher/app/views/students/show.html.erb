@@ -11,7 +11,7 @@
         <%=render 'note' %>
       </div>
         <div class='note-content'>
-          <% @student.notes.each do |note| %>
+          <% @student.notes.order("created_at DESC").each do |note| %>
           <div class='borders top-left-border note-display'>
             <p><strong><%= note.posted_by %>: </strong> <%= note.text %></p>
             <p><em>Created on: <%= note.created_at.strftime("%b %e, %l:%M %p") %></em></p>

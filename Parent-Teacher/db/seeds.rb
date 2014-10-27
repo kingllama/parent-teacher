@@ -33,9 +33,9 @@ david_parents = [
   ['Michel', 'Armstrong', 'darmstrong@gmail.com', 'F','parents/mom3.jpg', "502-842-6659"],
   ['Horratio', 'Armstrong', 'darmstrong@gmail.com', 'M','parents/dad.jpg', "502-842-6659"],
 ]
-shannon_parents = [
-  ['Mary', 'Oden', 'soden@gmail.com', 'F', 'parents/mom2.jpg', "502-842-6659"],
-  ['James', 'Oden', 'soden@gmail.com', 'M','parents/dad2.jpg', "502-842-6659"],
+julie_parents = [
+  ['Mary', 'Cooke', 'scooke@gmail.com', 'F', 'parents/mom2.jpg', "502-842-6659"],
+  ['James', 'Cooke', 'scooke@gmail.com', 'M','parents/dad2.jpg', "502-842-6659"],
 ]
 chloe_parents = [
   ['Derek', 'Hunt', 'shunt@gmail.com', 'M','parents/dad5.jpg', "502-842-6659"],
@@ -73,7 +73,7 @@ first_students = [
   ['Andrew','Shepard','M','students/boy-young14.jpg', 4],
   ['Chris','Oliver','M','students/boy-young9.jpg', 4],
   ['Don','Oden''M','students/boy-young11.jpg', 4],
-  ['Sylvia','Hunt','F','students/boy-young8.jpg', 4],
+  ['Sylvia','Hunt','F','students/girl-young14.jpg', 4],
 ]
 second_students = [
   ['Topaz','Dion','F','students/girl-young10.jpg', 4],
@@ -141,10 +141,10 @@ david_parents.each do |parent|
   dav.save
 end
 
-shannon_parents.each do |parent|
-  shan = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3], avatar_file_name: parent[4], phone: parent[5])
-  shan.students << Student.where(lastname: 'Oden') 
-  shan.save
+julie_parents.each do |parent|
+  julie = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3], avatar_file_name: parent[4], phone: parent[5])
+  julie.students.push(Student.find(26), Student.find(15))
+  julie.save
 end
 
 chloe_parents.each do |parent|
@@ -171,8 +171,31 @@ bradley_parents.each do |parent|
   brad.save
 end
 
+# David Armstrong notes
+Note.create(posted_by: "Michel", student_id: 6, text: "David has been struggling with his math homework, but we are working hard to help him understand.")
+Note.create(posted_by: "Monica", student_id: 6, text: "David has made some really excellent improvement in math! He is a very diligent student.")
+Note.create(posted_by: "Michel", student_id: 6, text: "Great idea for the creative book report! David had a lot of fun practicing for his performance.")
 
 
+# Chloe Hunt notes
+Note.create(posted_by: "Derek", student_id: 13, text: "Chloe's goldfish passed away this weekend. Please be sensistive if she is a little sad.")
+Note.create(posted_by: "Monica", student_id: 13, text: "Chloe's science project was highly impressive! I have encouraged her to check out advanced summer workshops.")
+Note.create(posted_by: "Derek", student_id: 13, text: "Thank you for inspiring Chloe! She has become quite fascinated with chemistry and is showing excellent promise.")
 
-## Add some notes for students too
-## events are probably easier to add in-system
+# Andrew Shepard notes
+Note.create(posted_by: "Helen", student_id: 21, text: "Andrew loves Music class! He comes home every day so excited to show us what he can play.")
+Note.create(posted_by: "Helen", student_id: 21, text: "Have you considered teaching students a quieter or less piercing instrument than the recorder?")
+Note.create(posted_by: "Don", student_id: 21, text: "Andrew did very poorly on his reading test today. I have provided him with some supplementary materials, I hope this helps!")
+
+# Romila Cooke notes
+Note.create(posted_by: "Don", student_id: 26, text: "Romila has made an excellent start. She finished the entire week's assignemnts in a single day!")
+Note.create(posted_by: "Mary", student_id: 26, text: "If Romila finishes her work early, we have encouraged her to study other topics that interest her.")
+Note.create(posted_by: "Don", student_id: 26, text: "As you may know, Romila has taken it upon herself to found a student council. Please inform her that this is not a governing body.")
+
+# Julie Cooke notes
+julie = Student.find(15)
+julie.school = School.find_by(name: 'Yellow Stone Highschool')
+julie.save
+Note.create(posted_by: "Suzanne", student_id: 15, text: "Julie has continued to impress with her excellent mediation skills at the Model UN.")
+Note.create(posted_by: "Mary", student_id: 15, text: "Julie will be away from school from Thursday, November 16th to the following Monday for a leadership conference.")
+Note.create(posted_by: "Suzanne", student_id: 15, text: "It was wonderful of Julie to share her conference experience with the school. She is a very bright young woman.")
