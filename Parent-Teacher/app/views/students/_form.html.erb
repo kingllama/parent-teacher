@@ -32,16 +32,12 @@
         <%= f.hidden_field :school_id, {:class => 'form-control', :value => session[:school_id] } %>
         </div>
         <div>
-        <%= f.text_area :notes, {:class => 'form-control', :placeholder => 'Any special information about this student...'} %>
-        </div>
-        <div>
         <%= label_tag(:avatar, "Upload a photo: ") %>
+        <%= f.file_field :avatar %>
         </div>
         <div>
-          <%= f.file_field :avatar %>
         <%= label_tag(:evaluation, "Upload student evaluation: ") %>
- 
-          <%= f.file_field :evaluation %>
+        <%= f.file_field :evaluation %>
         </div>
         <div>
         <%= f.submit "Create Student", {:class => 'btn btn-warning'} %> 
