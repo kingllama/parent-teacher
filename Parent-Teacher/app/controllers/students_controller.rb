@@ -1,7 +1,13 @@
 class StudentsController < ApplicationController
+  before_action :require_login
+  before_action :authorize, only: [:new, :create, :destroy]
 
   def index
-    @students = Student.all
+    if current_user
+      @students = current_user.students
+    else
+      @students = admin_user.students
+    end
   end
 
   def show

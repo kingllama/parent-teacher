@@ -1,7 +1,13 @@
 class ClassroomsController < ApplicationController
+  before_action :require_login
+  before_action :authorize, only: [:edit, :create, :update, :destroy]
 
   def index
-    @classrooms = Classroom.all
+    if admin_user
+      @classrooms = Classroom.where(school_id: admin_user)
+    else
+      @classrooms = Classroom.where(user_id: current_user)
+    end
   end
 
   def show
@@ -19,13 +25,12 @@ class ClassroomsController < ApplicationController
   end
 
   def edit
-    authorize
     @classroom = Classroom.find(params[:id])
   end
 
   def create
     @classroom = Classroom.new(classroom_params)
-    @classroom.teacher = Teacher.find(classroom_params[:teacher_id])
+    @classroom.teacher = Teacher.find(classroom_params[:user_id])
 
     if @classroom.save
       redirect_to classrooms_path, notice: "#{@classroom.subject} was submitted successfully!"
@@ -68,7 +73,7 @@ class ClassroomsController < ApplicationController
 protected
 
   def classroom_params
-    params.require(:classroom).permit(:subject, :grade, :teacher_id, :school_id)
+    params.require(:classroom).permit(:subject, :grade, :user_id, :school_id)
   end
 
   
