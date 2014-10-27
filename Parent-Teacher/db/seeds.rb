@@ -30,24 +30,24 @@ don_classes = [
 ]
 
 david_parents = [
-  ['Michel', 'Armstrong', 'darmstrong@gmail.com', 'F'],
-  ['Horratio', 'Armstrong', 'darmstrong@gmail.com', 'M'],
+  ['Michel', 'Armstrong', 'darmstrong@gmail.com', 'F','parents/mom3.jpg'],
+  ['Horratio', 'Armstrong', 'darmstrong@gmail.com', 'M','parents/dad.jpg'],
 ]
 shannon_parents = [
-  ['Mary', 'Oden', 'soden@gmail.com', 'F'],
-  ['James', 'Oden', 'soden@gmail.com', 'M'],
+  ['Mary', 'Oden', 'soden@gmail.com', 'F', 'parents/mom2.jpg'],
+  ['James', 'Oden', 'soden@gmail.com', 'M','parents/dad2.jpg'],
 ]
 chloe_parents = [
-  ['Sylvia', 'Hunt', 'shunt@gmail.com', 'F'],
   ['Derek', 'Hunt', 'shunt@gmail.com', 'M'],
+  ['Sylvia', 'Hunt', 'shunt@gmail.com', 'F'],
 ]
 andrew_parents = [
   ['Helen', 'Shepard', 'Ashepard@gmail.com', 'F'],
   ['Alexander', 'Shepard', 'Ashepard@gmail.com', 'M'],
 ]
 patrick_parents = [
-  ['Leslie', 'Adams', 'Padams@gmail.com', 'F'],
   ['Thomas', 'Adams', 'Padams@gmail.com', 'M'],
+  ['Leslie', 'Adams', 'Padams@gmail.com', 'F'],
 ]
 bradley_parents = [
   ['Maura', 'Shelley', 'Bshelley@gmail.com', 'F'],

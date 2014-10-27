@@ -46,7 +46,7 @@ a div:hover {
 
 html, body{
   height: 100%;
-  background-image: url('faded-borderfix.png');
+  background-image: url('wrinkled_paper.jpg');
   left: 0;
   right: 0;
   z-index: 1;
@@ -114,8 +114,18 @@ p {
   position: fixed;
   z-index: 4;
   display: inline-block;
+
 }
 
+#logout-button {
+    left: 19px;
+    right: 0px;
+    top: 125px;
+    float: left;
+    position: fixed;
+    z-index: 4;
+    display: inline-block;
+  }
 
 .chosen-container-multi .chosen-choices {
   min-height: 50px;
