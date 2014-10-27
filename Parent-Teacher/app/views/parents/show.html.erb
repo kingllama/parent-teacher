@@ -12,7 +12,7 @@
         <h4>Name: <%= @parent.full_name %> </h4>
         <h4>Email: <%= @parent.email %> </h4>
         <h4>Address: <%= @parent.address %> </h4>
-        <h4>Phonenumber: <%= @parent.emergency_phone %> </h4>
+        <h4>Phone Number: <%= @parent.emergency_phone %> </h4>
         <h4><%= link_to "edit info", edit_parent_path %></h4>
     </div>
   </div>
@@ -25,7 +25,7 @@
         <% @parent.students.each do |student|  %>
           <div class='child-info'>
             <div>
-              <%= image_tag(student.avatar_file_name) %>
+              <%= link_to image_tag(student.avatar_file_name), student_path(student) %>
             </div> 
             <div class='child-name'>
               <span><%= link_to student.firstname, student_path(student)%>  |  Grade: <%= student.grade %></span>
