@@ -4,7 +4,8 @@
     <div class='single-student-photo'><%= image_tag(@student.avatar_file_name) %></div>
     <div>
       <h4><%= @student.full_name %> </h4>
-      <h4>Gender: <%= @student.gender %> </h4>
+      <h4>Grade: <%= @student.grade %> </h4>
+      <h4> School: <%= @student.school.name %></h4>
     </div>
   </div>
       <div class='note-form'>
