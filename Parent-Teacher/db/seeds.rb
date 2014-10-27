@@ -30,28 +30,28 @@ don_classes = [
 ]
 
 david_parents = [
-  ['Michel', 'Armstrong', 'darmstrong@gmail.com', 'F','parents/mom3.jpg'],
-  ['Horratio', 'Armstrong', 'darmstrong@gmail.com', 'M','parents/dad.jpg'],
+  ['Michel', 'Armstrong', 'darmstrong@gmail.com', 'F','parents/mom3.jpg', "502-842-6659"],
+  ['Horratio', 'Armstrong', 'darmstrong@gmail.com', 'M','parents/dad.jpg', "502-842-6659"],
 ]
 shannon_parents = [
-  ['Mary', 'Oden', 'soden@gmail.com', 'F', 'parents/mom2.jpg'],
-  ['James', 'Oden', 'soden@gmail.com', 'M','parents/dad2.jpg'],
+  ['Mary', 'Oden', 'soden@gmail.com', 'F', 'parents/mom2.jpg', "502-842-6659"],
+  ['James', 'Oden', 'soden@gmail.com', 'M','parents/dad2.jpg', "502-842-6659"],
 ]
 chloe_parents = [
-  ['Derek', 'Hunt', 'shunt@gmail.com', 'M'],
-  ['Sylvia', 'Hunt', 'shunt@gmail.com', 'F'],
+  ['Derek', 'Hunt', 'shunt@gmail.com', 'M','parents/dad5.jpg', "502-842-6659"],
+  ['Sylvia', 'Hunt', 'shunt@gmail.com', 'F','parents/mom4.jpg', "502-842-6659"],
 ]
 andrew_parents = [
-  ['Helen', 'Shepard', 'Ashepard@gmail.com', 'F'],
-  ['Alexander', 'Shepard', 'Ashepard@gmail.com', 'M'],
+  ['Helen', 'Shepard', 'Ashepard@gmail.com', 'F', 'parents/mom5.jpg', "502-842-6659"],
+  ['Alexander', 'Shepard', 'Ashepard@gmail.com', 'M', 'parents/dad4.jpg', "502-842-6659"],
 ]
 patrick_parents = [
-  ['Thomas', 'Adams', 'Padams@gmail.com', 'M'],
-  ['Leslie', 'Adams', 'Padams@gmail.com', 'F'],
+  ['Thomas', 'Adams', 'Padams@gmail.com', 'M', 'parents/dad3.jpg', "502-842-6659"],
+  ['Leslie', 'Adams', 'Padams@gmail.com', 'F', 'parents/mom.jpg', "502-842-6659"],
 ]
 bradley_parents = [
-  ['Maura', 'Shelley', 'Bshelley@gmail.com', 'F'],
-  ['George', 'Shelley', 'Bshelley@gmail.com', 'M'],
+  ['Maura', 'Shelley', 'Bshelley@gmail.com', 'F', 'parents/mom6.jpg', "502-842-6659"],
+  ['George', 'Shelley', 'Bshelley@gmail.com', 'M', 'parents/dad3.jpg', "502-842-6659"],
 ]
 
 first_students = [
@@ -135,38 +135,38 @@ second_students.each do |student|
 end
 
 david_parents.each do |parent|
-  dav = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3])
+  dav = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3], avatar_file_name: parent[4], phone: parent[5])
   dav.students << Student.where(lastname: 'Armstrong')
   dav.students << Student.last
   dav.save
 end
 
 shannon_parents.each do |parent|
-  shan = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3])
+  shan = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3], avatar_file_name: parent[4], phone: parent[5])
   shan.students << Student.where(lastname: 'Oden') 
   shan.save
 end
 
 chloe_parents.each do |parent|
-  chlo = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3])
+  chlo = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3], avatar_file_name: parent[4], phone: parent[5])
   chlo.students << Student.where(lastname: 'Hunt') 
   chlo.save
 end
 
 andrew_parents.each do |parent|
-  andy = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3])
+  andy = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3], avatar_file_name: parent[4], phone: parent[5])
   andy.students << Student.where(lastname: 'Shepard')
   andy.save
 end
 
 patrick_parents.each do |parent|
-  pat = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3])
+  pat = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3], avatar_file_name: parent[4], phone: parent[5])
   pat.students << Student.where(lastname: 'Adams') 
   pat.save
 end
 
 bradley_parents.each do |parent|
-  brad = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3])
+  brad = Parent.new(firstname: parent[0], lastname: parent[1], email: parent[2], gender: parent[3], avatar_file_name: parent[4], phone: parent[5])
   brad.students << Student.where(lastname: 'Shelley')
   brad.save
 end
