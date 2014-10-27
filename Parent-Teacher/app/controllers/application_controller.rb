@@ -30,7 +30,10 @@ class ApplicationController < ActionController::Base
       flash[:error] = 'You have to be an admin to access this page.'
       redirect_to :root
     end
-    
+  end
+
+  def index
+    @homepage = true 
   end
 
   helper_method :current_user, :admin_user, :authorize, :teacher_user, :parent_user

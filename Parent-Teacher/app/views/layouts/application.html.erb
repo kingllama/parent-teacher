@@ -13,7 +13,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <a href="/"><img src='/images/logo.png' class="logo"></a>
+  <% if !@homepage %>
+    <a href="/"><img src='/images/schoolboxlogo.png' class="logo"></a>
+    <% if current_user || admin_user %>
+      <%= button_to "Log out", session_path("current"), { method: "delete", :class => "btn btn-warning", :id => "logout-button" } %>
+    <% end %>
+  <% end %>
   <%= yield %>
 </body>
 </html>

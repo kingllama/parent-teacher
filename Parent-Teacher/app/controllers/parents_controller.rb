@@ -29,11 +29,11 @@ class ParentsController < ApplicationController
 
   def update
     @parent = Parent.find(params[:id])
-      # if @parent.update_attributes(parent_params)
-      #   redirect_to somewhere
-      # else 
-      #   render :edit
-      # end
+      if @parent.update_attributes(parent_params)
+        redirect_to parent_path(current_user)
+      else 
+        render :edit
+      end
   end
 
   def destroy
@@ -47,7 +47,7 @@ protected
 
   def parent_params
 # do we need to add timestamps?!?!!
-    params.require(:parent).permit(:firstname, :lastname, :email, :gender)
+    params.require(:parent).permit(:firstname, :lastname, :email, :gender, :address, :emergency_phone, :avatar)
   end
 
 end

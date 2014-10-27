@@ -1,10 +1,8 @@
 class NotesController < ApplicationController
 
+
   def index
     @notes = Note.all
-  end
-
-  def show
   end
 
   def new
@@ -17,8 +15,7 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
     if @note.save
-      #push note into student notes collection
-      #redirect somewhere
+      redirect_to student_path(@note.student_id)
     end
   end
 
@@ -34,6 +31,10 @@ class NotesController < ApplicationController
 
     def note_params
       params.require(:note).permit(:posted_by, :text, :student_id)
+    end
+
+    def load_student
+      @student = Student.find(params[:student_id])
     end
 
 end

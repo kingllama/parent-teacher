@@ -45,10 +45,12 @@ a div:hover {
 }
 
 html, body{
-  z-index: -999;
   height: 100%;
-  padding: 0px;
-  background-color: #a6d7e7;
+  background-image: url('wrinkled_paper.jpg');
+  left: 0;
+  right: 0;
+  z-index: 1;
+  position: fixed;
   font-family: 'Lato', sans-serif;
 }
 
@@ -112,8 +114,18 @@ p {
   position: fixed;
   z-index: 4;
   display: inline-block;
+
 }
 
+#logout-button {
+    left: 19px;
+    right: 0px;
+    top: 125px;
+    float: left;
+    position: fixed;
+    z-index: 4;
+    display: inline-block;
+  }
 
 .chosen-container-multi .chosen-choices {
   min-height: 50px;

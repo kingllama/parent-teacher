@@ -16,6 +16,8 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @teacher = Teacher.find(current_user.id)
+    get_students(@teacher)
   end
 
   # GET /events/1/edit
@@ -71,6 +73,14 @@ class EventsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
+    end
+
+    def get_students(teacher)
+      students = teacher.students
+      @student_list = []
+      students.order('lastname').each do |student|
+        @student_list.push([(student.lastname + ", " + student.firstname), student.id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
