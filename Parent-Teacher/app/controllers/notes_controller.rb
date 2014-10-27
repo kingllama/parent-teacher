@@ -7,7 +7,7 @@ class NotesController < ApplicationController
   end
 
   def new
-    @note = @student.notes.build
+    @note = Note.new
   end
 
   def edit
