@@ -1,6 +1,5 @@
 class NotesController < ApplicationController
 
-  before_filter :load_student
 
   def index
     @notes = Note.all
