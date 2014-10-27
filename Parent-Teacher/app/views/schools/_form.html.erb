@@ -1,0 +1,27 @@
+<%= form_for @school do |f| %>
+<bh1 class='appointment-header'>Register Your School</bh1>
+  <section>
+    <div class='new-school-form borders shadow top-left-border'>
+      <div>
+        <div class='new-school'>
+          <%= f.text_field "name", {:class => 'form-control small-input', :placeholder => "School name"}  %>
+        </div>
+        <div class='new-school'>
+          <%= f.text_field "email", {:class => 'form-control small-input', :placeholder => "Email"}  %>
+        </div>
+        <div class='new-school'>
+          <%= f.text_field "address", {:class => 'form-control small-input', :placeholder => "Address"}  %>
+        </div>
+        <div class='new-school'>
+          <%= f.password_field "password", {:class => 'form-control small-input', :placeholder => "Password"} %>
+        </div>
+        <div class='new-school'>
+          <%= f.password_field "password_confirmation", {:class => 'form-control small-input', :placeholder => "Confirm Password"} %>
+        </div>
+        <div class='register-button'>
+        <%= f.submit "Register", :class => 'btn btn-warning'%> 
+        </div>
+      </div>
+    </div>
+  </section> 
+<% end %>

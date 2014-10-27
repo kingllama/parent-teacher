@@ -1,0 +1,70 @@
+.parent-body {
+  background-color: white;
+  width: 80%;
+  margin-left: 9%;
+  padding: 20px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.parent-photo{
+  display:inline-block;
+  height: 150px;
+  width: 150px;
+  border: 4px solid white;
+  border-radius: 5px;
+  background-image: url('/images/nopicture.png');
+  background-size: 150px 150px;
+  margin-right: 20px;
+  float:left; 
+}
+.parent-photo img{
+  height:150px;
+  width:150px;
+}
+
+.parent-info div{
+  display: inline-block;
+}
+
+.parent-info h4 {
+  text-align: left;
+}
+
+.child-info{
+  width: 250px;
+  height: 300px;
+  padding:20px;
+  border-radius: 5px;
+  background-color: #E48743;
+  margin: 20px;
+  display: inline-block;
+  text-align: center;
+  background-image: url('nopicutrepng.png');
+  background-size: 200px 200px;
+  background-repeat: no-repeat;
+  padding: 10px;
+}
+
+.child-info img{
+  height: 180px;
+  width:180px;
+  border-radius: 4px;
+}
+
+.child-name{
+  text-align: left;
+  padding:10px;
+  font-size: 20px;
+  display: inline-block;
+}
+.child-button{
+  text-align: right;
+  display: inline-block;
+}
+
+.appointment-list{
+  padding-top: 20px;
+  position:absolute;
+}

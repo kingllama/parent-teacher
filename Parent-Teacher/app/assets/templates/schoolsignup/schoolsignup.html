@@ -1,0 +1,24 @@
+<!-- ng-controller needs to be added to add school to the actual database -->
+<!-- then the ng-models inside the input classes will hold something like school.name, school.address and soo on.... -->
+<!-- ng-click will hold the function that the controller holds -->
+
+<div class='container'>
+  <form class='school-sign-up' ng-submit='createnewschool()'>
+    <div class='school-sign-in-holder'>
+    <h2 class='school-sign-in-header'>Register Your School</h2>
+      <div class='school-login-wrap'>
+        <div class='school-login-info'>
+          <input class='form-padding form-control text-center' placeholder='School Name' ng-model='school.name'>
+          <input class='form-padding form-control text-center' placeholder='Address' ng-model='school.address'>
+          <input class='form-padding form-control text-center' placeholder='Email' ng-model='school.email'>
+          <input class='form-padding form-control text-center' placeholder='Password' ng-model='school.password'>
+        </div>
+        <div class='login-btn text-center'>
+          <button class='btn btn-default' type='submit' value='submit'>Sign Up</button>
+        </div>
+      </div>
+    </div> 
+  </form>
+  <p>LIST OF SCHOOLS THAT HAVE ALREADY SIGNED UP?!</p>
+</div>
+

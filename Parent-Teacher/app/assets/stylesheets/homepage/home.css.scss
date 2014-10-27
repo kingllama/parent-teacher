@@ -1,0 +1,74 @@
+#front-page-header {
+  padding-bottom: 5%;
+}
+
+#front-page-header h1 {
+  font-size: 5.5em;
+  margin-bottom: 12px;
+}
+
+#front-page-header h3 {
+  opacity: 0.8;
+}
+
+.bg-image {
+  height: 100%;
+  background-image: url('pencils.jpg');
+  background-size: contain;
+  background-repeat: repeat-x;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  position: fixed;
+}
+
+.whitelayer {
+  height: 100%;
+  background-color: white;
+  z-index: 2;
+  position: fixed;
+  opacity: 0.5;
+  left: 0;
+  right: 0;
+}
+
+#front-page-content{
+  height: 100%;
+  width: 100%;
+  margin-top: 0px;
+  padding-top: 40px;
+  position: fixed;
+  z-index: 3;
+}
+
+.front-box{
+  display: inline-block;
+}
+
+.front-box p {
+  opacity: 1;
+}
+
+#login-box{
+  padding-top: 10px;
+  padding-bottom: 20px;
+  width: 300px;
+  float: right;
+  margin-right: 22%; 
+}
+
+#brochure{
+  width: 400px;
+  float: left; 
+  margin-left: 18%;
+}
+
+#brochure button {
+  float: right;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.btn-control {
+  float: right;
+}

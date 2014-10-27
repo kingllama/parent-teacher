@@ -1,0 +1,144 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+  *= require_tree
+  *= require_self
+  *= require chosen
+  *= require fullcalendar
+ */
+ @import "homepage/home.css.scss";
+ @import "school/schoolsignup.css.scss";
+ @import "school/school.css.scss";
+ @import "classroom/classroom.css.scss";
+ @import "parent/parentdashboard.css.scss";
+ @import "events.css.scss";
+ @import "messages/message.css.scss";
+
+a {
+  color: #90CA77;
+}
+
+a:hover {
+  color: #B1DAA0;
+  text-decoration: none;
+}
+
+a div {
+  transition: border-width 0.2s ease-out;
+  border-width: 4px;
+  color: #777777;
+}
+
+a div:hover {
+  transition: border-width 0.2s ease-in;
+  color: black;
+  border-width: 2px;
+}
+
+html, body{
+  height: 100%;
+  background-image: url('wrinkled_paper.jpg');
+  left: 0;
+  right: 0;
+  z-index: 1;
+  position: fixed;
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+bh1 {
+  font-family: 'Montserrat', sans-serif;
+  margin: .67em 0;
+  font-size: 5.5em;
+  text-align: center;
+}
+
+bh2 {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0em 0;
+  font-size: 3.5em;
+  text-align: center;
+  display: inherit;
+}
+
+#calendar{
+  padding-top: 12px;
+  margin: auto;
+  width: 90%;
+}
+
+
+.container{
+  background-color: white;
+}
+
+.borders{
+  border-radius: 2px;
+  border-right:  6px solid #85A3FF;
+  border-bottom: 6px solid #85A3FF;
+}
+
+.shadow {
+  box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.7)
+}
+
+p {
+  font-size: 1em;
+}
+
+
+.text-center{
+  text-align: center;
+}
+
+.logo {
+  height: 90px;
+  width: 90px;
+  left: 12px;
+  right: 0px;
+  top: 20px;
+  float: left;
+  position: fixed;
+  z-index: 4;
+  display: inline-block;
+
+}
+
+#logout-button {
+    left: 19px;
+    right: 0px;
+    top: 125px;
+    float: left;
+    position: fixed;
+    z-index: 4;
+    display: inline-block;
+  }
+
+.chosen-container-multi .chosen-choices {
+  min-height: 50px;
+  max-height: 330px;
+  overflow: auto !important;  /* Forgive me lord for I have sinned */
+}
+
+.top-left-border{
+  border-left:  5px solid #E48743;
+  border-top: 5px solid #E48743;
+}
+
+.fc-event {
+  background-color: #90CA77 !important;
+  border: 1px solid #90CA77 !important;
+}

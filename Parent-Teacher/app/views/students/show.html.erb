@@ -1,0 +1,43 @@
+<!-- Left Side of the student show -->
+<div class="student-body">
+  <div class="student-info">
+    <div class='single-student-photo'><%= image_tag(@student.avatar_file_name) %></div>
+    <div>
+      <h4><%= @student.full_name %> </h4>
+      <h4>Gender: <%= @student.gender %> </h4>
+    </div>
+  </div>
+      <div class='note-form'>
+        <%=render 'note' %>
+      </div>
+        <div class='note-content'>
+          <% @student.notes.order("created_at DESC").each do |note| %>
+          <div class='borders top-left-border note-display'>
+            <p><strong><%= note.posted_by %>: </strong> <%= note.text %></p>
+            <p><em>Created on: <%= note.created_at.strftime("%b %e, %l:%M %p") %></em></p>
+          </div>
+          <% end %>
+      </div>
+    
+</div>
+
+<!-- Chat BOX -->
+<div class="chat-body">
+  <div id="chat-box">
+    <div id="chat-control-box"></div>
+  </div>
+  <div id="user-chat-input">
+    <input type="text" id="input" class="form-control chat-form">
+    <button class="btn btn-default chat-button">Send</button>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var metaObject = {
+  pageId: '<%= @student.id %>',
+  userType: '<%= current_user.type %>',
+  userName: '<%= current_user.lastname %>'
+};
+</script>
+<script src='/chat.js'></script>

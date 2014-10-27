@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+<section class='text-center appointment-container'>
+  <div class='view-appointment borders shadow'>
+    <div>
+      <label>Title:</label>
+      <%= @event.title %>
+    </div>
+
+    <div>
+      <label>Description:</label>
+      <%= @event.description %>
+    </div>
+
+    <div>
+      <label>Start time:</label>
+      <%= @event.start_time.strftime("%b %d %l:%M %P") %>
+    </div>
+
+    <div>
+      <label>End time:</label>
+      <%= @event.end_time.strftime("%b %d %l:%M %P") %>
+    </div>
+    <div>
+      <label>Teacher:</label>
+      <%= @event.teacher%>
+    </div>
+    <div>
+      <label>Student:</label>
+      <%= @event.student%>
+    </div>
+    <div>
+      <label>Parent:</label>
+      <% if @event.student.parents %>
+        <% @event.student.parents.each do |parent| %>
+          <%= parent.full_name %>
+        <% end %>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to 'Back', teacher_path(@event.teacher), :class => 'btn btn-default'%>
+      <%=link_to 'Edit', edit_event_path(@event), :class => 'btn btn-default'%>
+      <%= link_to 'Remove', @event, method: :delete, data: { confirm: 'Are you sure?' },  :class => 'btn btn-default' %>
+    </div>
+  </div>
+</section>
+
+

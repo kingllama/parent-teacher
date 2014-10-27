@@ -1,0 +1,19 @@
+<%= form_for([@student, @note]) do |f| %>  
+<bh1 class='appointment-header'>Create a new Note:</bh1>
+  <section>
+    <div class='new-school-form borders shadow top-left-border'>
+      <div>
+        <div class='new-school'>
+          <%= f.text_field :posted_by, {:class => 'form-control small-input', :placeholder => "Your Name"}  %>
+        </div>
+        <div class='new-school'>
+          <%= f.text_area :text, {:class => 'form-control small-input', :placeholder => "A Note about this student..."}  %>
+        </div>
+        <%= f.hidden_field :student_id, value: params[:student_id] %>
+        <div class='register-button'>
+        <%= f.submit "Add Note!", :class => 'btn btn-warning'%> 
+        </div>
+      </div>
+    </div>
+  </section> 
+<% end %>

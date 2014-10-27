@@ -1,0 +1,43 @@
+
+<div class="parent-body">
+  <div class="parent-info">
+    <div class='parent-photo'><%=link_to image_tag(@parent.avatar_file_name)%></div>
+    <div>
+        <h4>Name: <%= @parent.full_name %> </h4>
+        <h4>Email: <%= @parent.email %> </h4>
+        <h4>Address: <%= @parent.address %> </h4>
+        <h4>Phone Number: <%= @parent.emergency_phone %> </h4>
+        <h4><%= link_to "edit info", edit_parent_path %></h4>
+    </div>
+  </div>
+
+  <hr>
+  <h3>Your Children:</h3>
+  <div class="child-scroll">
+    <div class='row'>
+      <div class='col-md-12'>
+        <% @parent.students.each do |student|  %>
+          <div class='child-info'>
+            <div>
+              <%= link_to image_tag(student.avatar_file_name), student_path(student) %>
+            </div> 
+            <div class='child-name'>
+              <span><%= link_to student.firstname, student_path(student)%>  |  Grade: <%= student.grade %></span>
+              <br>
+              <div class="btn-group dropdown appointment-list">
+                <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Appointments<span class="caret"></span>
+                </button>
+                <% student.events.each do |event|%>
+                  <ul class="dropdown-menu" role="menu">
+                    <p><%=link_to "#{event.title}"%></p>
+                  </ul>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>  <!-- end container -->
+

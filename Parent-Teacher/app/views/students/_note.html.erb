@@ -1,0 +1,8 @@
+<%= form_for Note.new do |f| %> 
+  <%= f.text_field :text, {:class => 'form-control', :placeholder => 'enter your note'} %>
+  <%= f.hidden_field :student_id, :value => @student.id %> 
+  <%= f.hidden_field :posted_by, :value => current_user.firstname %>
+  <div class='note-submission'>
+  <%= f.submit "Post Your note!", :class => 'btn btn-warning' %>
+  </div>
+<% end %>

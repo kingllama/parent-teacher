@@ -2,13 +2,23 @@
 <html>
 <head>
   <title>ParentTeacher</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic|Montserrat' rel='stylesheet' type='text/css'>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+
+  <%= stylesheet_link_tag    'application', media: 'all', "data-turbolinks-track" => true %>
+  <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <% if !@homepage %>
+    <a href="/"><img src='/images/schoolboxlogo.png' class="logo"></a>
+    <% if current_user || admin_user %>
+      <%= button_to "Log out", session_path("current"), { method: "delete", :class => "btn btn-warning", :id => "logout-button" } %>
+    <% end %>
+  <% end %>
+  <%= yield %>
 </body>
 </html>

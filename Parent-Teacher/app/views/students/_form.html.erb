@@ -1,0 +1,47 @@
+  <div class='borders top-left-border new-student-form'>
+    <%= form_for @student, :html => { :multipart => true }, :class => 'form-horizontal' do |f| %>
+      <div class='new-student-input'>
+        <div>
+        <%= f.text_field :firstname, {:class => 'form-control', :placeholder => "First Name"} %>
+        </div>
+        <div>
+        <%= f.text_field :lastname, {:class => 'form-control', :placeholder => "Last Name"} %>
+        </div>
+        <div>
+        <%= f.select :grade, options_for_select(["Kindergarten", "Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5", "Grade 6", "Grade 7", "Grade 8", "Grade 9", "Grade 10","Grade 11", "Grade 12"]), {prompt: 'Grade (current school year)', :class => 'btn btn-default dropdown-toggle'} %>
+        </div>
+        <div>
+        <%= f.text_field :gender, {:class => 'form-control', :placeholder => "Gender"} %>
+        </div>
+        <div>
+        <%= f.text_field :address, {:class => 'form-control', :placeholder => "Address"} %>
+        </div>
+        <div>
+        <%= f.text_field :emergency_contact_name, {:class => 'form-control', :placeholder => "Emergency Contact Name"} %>
+        </div>
+        <div>
+        <%= f.text_field :emergency_contact_relation, {:class => 'form-control', :placeholder => "Emergency Contact Relation to Student"} %>
+        </div>
+        <div>
+        <%= f.telephone_field :emergency_phone, {:class => 'form-control', :placeholder => "Emergency Contact Number"} %>
+        </div>
+        <div>
+        <%= f.text_field :parent_email, {:class => 'form-control', :placeholder => "Primary Guardian Email Address"} %>
+        </div>
+        <div>
+        <%= f.hidden_field :school_id, {:class => 'form-control', :value => session[:school_id] } %>
+        </div>
+        <div>
+        <%= label_tag(:avatar, "Upload a photo: ") %>
+        <%= f.file_field :avatar %>
+        </div>
+        <div>
+        <%= label_tag(:evaluation, "Upload student evaluation: ") %>
+        <%= f.file_field :evaluation %>
+        </div>
+        <div>
+        <%= f.submit "Create Student", {:class => 'btn btn-warning'} %> 
+        </div>
+      </div>
+    <% end %>
+  </div>

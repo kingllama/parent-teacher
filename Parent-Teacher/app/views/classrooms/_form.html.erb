@@ -1,0 +1,30 @@
+<div class='borders top-left-border new-student-form'>
+  <%= form_for @classroom do |f| %>
+    <% if @classroom.errors.any? %>
+      <div>
+        <%= pluralize(@classroom.errors.count, "error") %> prevented the account from being created:
+        <ul>
+          <% @classroom.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class='new-student-input'>
+      <div>
+        <%= f.text_field "grade", {:class => 'form-control', placeholder: "Grade"} %>
+      </div>
+      <div>
+        <%= f.text_field "subject", {:class => 'form-control', placeholder: "Subject"} %>
+      </div>
+      <div>
+        <%= f.label "user_id", "Choose a teacher:" %><br>
+        <%= f.collection_select(:user_id, Teacher.all, :id, :full_name) %>
+        <%= f.hidden_field :school_id, :value => session[:school_id] %>
+      </div>
+      <div>
+        <%= f.submit "Create Class", :class => 'btn btn-warning'%> 
+      </div>
+    </div>
+  <% end %>
+</div>
