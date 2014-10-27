@@ -64,13 +64,19 @@
 }
 
 #chat-box {
+  left: 0;
+  top: 2;
+  backgroud-color: black;
+  width:95%;
   margin: 25px;
   height: 85%;
-  position: relative;
+  position: absolute;
+  overflow: auto;
 }
 
 #user-chat-input {
   margin: auto;
+  margin-top: 760px;
   width: 80%;
 }
 
@@ -109,8 +115,8 @@
 }
 
 .show-notes{
-text-align:left;
-margin-top: 50px;
+  text-align:left;
+  margin-top: 50px;
 }
 
 .show-notes div{
@@ -119,26 +125,37 @@ margin-top: 50px;
 }
 
 .speech-bubble{
+
+}
+
+.teacher-bubble{
   width: 300px; 
   height: auto;
   background-color: white;
   border-radius: 10px;
   margin-bottom: 5px; 
   padding: 10px;
+  margin-right: 200px;
   word-wrap: break-word;
   overflow: hidden;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  float: left;
+  clear: right;
 }
 
-.teacher-bubble{
-  height: auto;
-  background-color: white;
-  border-radius: 10px;
-}
 .parent-bubble{
+  width: 300px; 
   height: auto;
   background-color: white;
   border-radius: 10px;
+  margin-bottom: 5px; 
+  padding: 10px;
+  margin-left: 200px;
+  word-wrap: break-word;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  float: right;
+  clear: left;
 }
 
 

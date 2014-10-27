@@ -28,21 +28,6 @@
             <!-- insert student.photo --><img src='<%= student.avatar %>'>
             </div> 
             <div class='child-name'>
-<<<<<<< HEAD
-              <span><%= link_to student.firstname, student_path(student)%></span>
-                <div class="btn-group dropup">
-                  <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Appointments<span class="caret"></span>
-                  </button>
-                    <% student.events.each do |event|%>
-                      <ul class="dropdown-menu" role="menu">
-                        <p><%=link_to "#{event.title}"%></p>
-                      </ul>
-                      <% end %>
-                </div>
-               
-              <div class='child-button'>
-                
-=======
               <span><%= student.firstname %>  |  Grade: <%= student.grade %></span>
               <br>
               <div class="btn-group dropdown appointment-list">
@@ -53,7 +38,6 @@
                     <p><%=link_to "#{event.title}"%></p>
                   </ul>
                 <% end %>
->>>>>>> 8e0b8be215134fb67fb60acfeb42514efe422083
               </div>
             </div>
           </div>
