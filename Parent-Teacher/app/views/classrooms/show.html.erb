@@ -1,16 +1,18 @@
 <div class="classroom-header">
   <bh2><%= @classroom.subject %></bh2>
+  <hr>
 </div>
+
 
 <div class="classroom-body">
   <div class="classroom-body-header">
     <h2><%= @teacher %></h2>
   </div>
   <br>
-  <div>
+  <div class='select-students'>
     <div id="select-form-box">
     <%= form_for @classroom, :id => 'class_form_id' do |f| %>
-      <%= select_tag :student_ids, options_from_collection_for_select(@students, "id", "full_name"), multiple: true, class: "chosen-select"%>
+      <%= select_tag :student_ids, options_from_collection_for_select(@students, "id", "full_name"), multiple: true, class: "chosen-select", :data => {:placeholder => 'Select Students...'}%>
     </div>
     <div id="add-btn">
       <%= submit_tag "Add Students" %>

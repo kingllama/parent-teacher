@@ -10,6 +10,12 @@
 .classroom-header h1 {
   margin-top: 0px;
 }
+.classroom-header hr{
+  padding:0;
+  margin:0;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
 .classroom-body {
   display: inline-block;
@@ -121,7 +127,6 @@
   position: absolute;
   top: 11;
   left: 70%;
-  padding-top: 33px;
 
 }
 
@@ -139,4 +144,9 @@
 }
 .student-checkbox {
   display: inline-block;
+}
+
+
+.select-students{
+  margin-top: 40px;
 }
