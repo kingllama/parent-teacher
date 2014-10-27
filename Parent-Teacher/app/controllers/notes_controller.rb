@@ -1,13 +1,12 @@
 class NotesController < ApplicationController
 
-  before_filter :load_student
 
   def index
     @notes = Note.all
   end
 
   def new
-    @note = @student.notes.build
+    @note = Note.new
   end
 
   def edit
