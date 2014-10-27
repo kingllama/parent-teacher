@@ -47,7 +47,7 @@ protected
 
   def parent_params
 # do we need to add timestamps?!?!!
-    params.require(:parent).permit(:firstname, :lastname, :email, :gender)
+    params.require(:parent).permit(:firstname, :lastname, :email, :gender, :address, :emergency_phone, :avatar)
   end
 
 end
