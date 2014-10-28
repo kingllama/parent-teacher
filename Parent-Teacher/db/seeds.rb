@@ -59,7 +59,7 @@ first_students = [
   ['Alexander','Adams','M','students/boy-young12.jpg', 4],
   ['Brendan','Sadler','M','students/boy-young3.jpg', 4],
   ['Marlon','Shelley','M','students/boy-young4.jpg', 4],
-  ['Daniel','Donaldson''M','students/boy-young5.jpg', 4],
+  ['Daniel','Donaldson','M','students/boy-young5.jpg', 4],
   ['Kieran','Oliver','M','students/boy-young8.jpg', 4],
   ['Shannon','Oden','F','students/shannon.jpg', 4],
   ['Chloe','Hunt','F','students/girl-young4.jpg', 4],
