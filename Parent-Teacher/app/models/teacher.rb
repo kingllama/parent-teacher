@@ -1,6 +1,6 @@
 class Teacher < User
   
-  has_secure_password
+  # has_secure_password
 
   belongs_to :school
   has_many :classrooms, foreign_key: :user_id
