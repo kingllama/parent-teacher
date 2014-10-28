@@ -10,12 +10,12 @@
   </div>
   <br>
   <div class='select-students'>
-    <div id="select-form-box">
     <%= form_for @classroom, :id => 'class_form_id' do |f| %>
+    <div id="select-form-box">
       <%= select_tag :student_ids, options_from_collection_for_select(@students, "id", "full_name"), multiple: true, class: "chosen-select", :data => {:placeholder => 'Select Students...'}%>
     </div>
     <div id="add-btn">
-      <%= submit_tag "Add Students" %>
+      <%= submit_tag "Add Students", :class => 'btn btn-default' %>
     </div>
   </div>
   <div class="email-form">
@@ -23,8 +23,9 @@
     <%= render 'messages/form' %>
   </div>
   <div id="remove-btn">
-    <%= submit_tag "Remove students" %>
+    <%= submit_tag "Remove students", :class => 'btn btn-default'  %>
   </div>
+  <% end %>
 </div>
 
 <div class="students-body">
@@ -41,7 +42,7 @@
       </div>
     <% end %>
   </div>
-  <% end %>
+  
 </div>
 
 <script type="text/javascript">
