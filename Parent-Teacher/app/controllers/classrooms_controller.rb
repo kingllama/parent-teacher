@@ -11,6 +11,7 @@ class ClassroomsController < ApplicationController
   end
 
   def show
+    current_sender
     @classroom = Classroom.find(params[:id])
     @students = Student.all - @classroom.students
     if @classroom.teacher
@@ -76,7 +77,10 @@ protected
     params.require(:classroom).permit(:subject, :grade, :user_id, :school_id)
   end
 
-  
+  def current_sender
+    @sender = Teacher.find(session[:user_id]) if session[:user_id]
+    @sender = School.find(session[:school_id]) if session[:school_id]
+  end
 
 
 end

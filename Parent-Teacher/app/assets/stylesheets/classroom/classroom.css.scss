@@ -23,6 +23,21 @@
   z-index: 2;
 }
 
+.email-form {
+  margin-top: 100px;
+  border: 2px solid #b3dcea;
+  padding: 10px;
+  border-radius: 4px;
+
+  div {
+    padding-top: 15px;
+  }
+
+  label {
+      padding-top: 15px;
+    }
+}
+
 
 .students-body {
   display: inline-block;
