@@ -72,7 +72,7 @@ first_students = [
   ['Bradley','Shelley','M','students/boy-young2.jpg', 4],
   ['Andrew','Shepard','M','students/boy-young14.jpg', 4],
   ['Chris','Oliver','M','students/boy-young9.jpg', 4],
-  ['Don','Oden''M','students/boy-young11.jpg', 4],
+  ['Don','Oden','M','students/boy-young11.jpg', 4],
   ['Sylvia','Hunt','F','students/girl-young14.jpg', 4],
 ]
 second_students = [
