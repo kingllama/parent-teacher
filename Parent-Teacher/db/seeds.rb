@@ -199,3 +199,7 @@ julie.save
 Note.create(posted_by: "Suzanne", student_id: 15, text: "Julie has continued to impress with her excellent mediation skills at the Model UN.")
 Note.create(posted_by: "Mary", student_id: 15, text: "Julie will be away from school from Thursday, November 16th to the following Monday for a leadership conference.")
 Note.create(posted_by: "Suzanne", student_id: 15, text: "It was wonderful of Julie to share her conference experience with the school. She is a very bright young woman.")
+
+romila = Student.find(26)
+romila.teachers << Teacher.find_by(firstname: 'Monica')
+romila.classrooms << Classroom.find(1,2,3,4,5)
