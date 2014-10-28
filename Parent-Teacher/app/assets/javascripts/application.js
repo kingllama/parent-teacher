@@ -18,6 +18,7 @@
 //= require_tree .
 //= require websocket_rails/main
 //= require fullcalendar
+//= require colorbox-rails
 
 
 

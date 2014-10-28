@@ -24,6 +24,7 @@
             <div class='child-name'>
               <span><%= link_to student.firstname, student_path(student)%>  |  Grade: <%= student.grade %></span>
               <br>
+              <p><%= link_to "View Report Card", "../assets/#{student.evaluation_file_name}", :data => { :colorbox => true, :colorbox_height => '80%' } %></p>
               <div class="btn-group dropdown appointment-list">
                 <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Appointments<span class="caret"></span>
                 </button>
@@ -40,4 +41,3 @@
     </div>
   </div>
 </div>  <!-- end container -->
-

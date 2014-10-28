@@ -43,6 +43,8 @@ gem "paperclip", "~> 4.2"
 gem 'chosen-rails'
 
 gem 'fullcalendar-rails'
+
+gem 'colorbox-rails', '~> 0.1.2'
 # Use unicorn as the app server
 # gem 'unicorn'
 
