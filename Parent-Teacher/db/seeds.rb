@@ -14,19 +14,19 @@ teachers = [
 ]
 
 monica_classes = [
-  ['Math'],
-  ['Science'],
-  ['French'],
-  ['Music'],
-  ['English']
+  ['Grade 4 Math'],
+  ['Grade 4 Science'],
+  ['Grade 4 French'],
+  ['Grade 4 Music'],
+  ['Grade 4 English']
 ]
 
 don_classes = [
-  ['Math'],
-  ['Science'],
-  ['French'],
-  ['Music'],
-  ['English']
+  ['Grade 5 Math'],
+  ['Grade 5 Science'],
+  ['Grade 5 French'],
+  ['Grade 5 Music'],
+  ['Grade 5 English']
 ]
 
 david_parents = [

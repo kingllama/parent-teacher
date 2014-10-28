@@ -34,7 +34,7 @@ class ClassroomsController < ApplicationController
     @classroom.teacher = Teacher.find(classroom_params[:user_id])
 
     if @classroom.save
-      redirect_to classrooms_path, notice: "#{@classroom.subject} was submitted successfully!"
+      redirect_to school_path(School.find(session[:school_id])), notice: "#{@classroom.subject} was submitted successfully!"
     else
       render :new
     end

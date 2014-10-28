@@ -7,7 +7,7 @@
         <h4>Email: <%= @parent.email %> </h4>
         <h4>Address: <%= @parent.address %> </h4>
         <h4>Phone Number: <%= @parent.emergency_phone %> </h4>
-        <h4><%= link_to "edit info", edit_parent_path %></h4>
+        <h4><%= link_to "edit info", edit_parent_path, :data => { colorbox: true } %></h4>
     </div>
   </div>
 
