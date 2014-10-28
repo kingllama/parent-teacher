@@ -62,15 +62,8 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 }
 
-#view-report-card-button {
-    width: 140px;
-    left: 580px;
-    right: 0px;
-    top: 25px;
-    float: left;
-    position: fixed;
-    z-index: 4;
-    display: inline-block;
+.view-report-card {
+  margin-left: 125px;
 }
 
 .chat-body {

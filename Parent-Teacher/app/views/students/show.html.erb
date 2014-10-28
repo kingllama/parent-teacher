@@ -3,12 +3,12 @@
   <div class="student-info">
     <div class='single-student-photo'><%= image_tag(@student.avatar_file_name) %></div>
     <div>
-      <h4><%= @student.full_name %> </h4>
+      <h4><%= @student.full_name %>  <%= link_to "View Report Card", "../assets/#{@student.evaluation_file_name}", :data => { :colorbox => true, :colorbox_height => '80%' }, :class => "btn btn-warning view-report-card" %></h4>  
       <h4>Grade: <%= @student.grade %> </h4>
       <h4> School: <%= @student.school.name %></h4>
     </div>
   </div>
-    <%= link_to "View Report Card", "../assets/#{@student.evaluation_file_name}", :data => { :colorbox => true, :colorbox_height => '80%' }, :class => "btn btn-warning", :id => "view-report-card-button" %> 
+ 
     <div class='note-form'>
       <%=render 'note' %>
     </div>
