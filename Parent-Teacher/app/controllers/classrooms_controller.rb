@@ -1,6 +1,7 @@
 class ClassroomsController < ApplicationController
+  
   before_action :require_login
-  before_action :authorize, only: [:edit, :create, :update, :destroy]
+  # before_action :authorize, only: [:edit, :create, :update, :destroy]
 
   def index
     if admin_user
