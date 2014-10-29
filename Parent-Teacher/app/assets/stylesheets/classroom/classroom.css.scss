@@ -10,6 +10,12 @@
 .classroom-header h1 {
   margin-top: 0px;
 }
+.classroom-header hr{
+  padding:0;
+  margin:0;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
 .classroom-body {
   display: inline-block;
@@ -21,6 +27,21 @@
   padding: 20px;
   position: absolute;
   z-index: 2;
+}
+
+.email-form {
+  margin-top: 100px;
+  border: 2px solid #b3dcea;
+  padding: 10px;
+  border-radius: 4px;
+
+  div {
+    padding-top: 15px;
+  }
+
+  label {
+      padding-top: 15px;
+    }
 }
 
 
@@ -121,14 +142,13 @@
   position: absolute;
   top: 11;
   left: 70%;
-  padding-top: 33px;
 
 }
 
 #remove-btn {
   float: right;
   position: absolute;
-  top: 95%;
+  top: 93%;
   left: 65%;
   display: none;
 }
@@ -139,4 +159,9 @@
 }
 .student-checkbox {
   display: inline-block;
+}
+
+
+.select-students{
+  margin-top: 40px;
 }

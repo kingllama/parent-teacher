@@ -2,31 +2,7 @@
   <div class='form-create-container shadow borders'>
     <div class='message-content'>
       <h2>Send a message: </h2><br>
-
-      <% if @sender.is_a?(Teacher) %>
-        <% recipients_array = ["All student guardians"] %>
-      <% elsif @sender.is_a?(School) %>
-        <% recipients_array = ["All student guardians", "All teachers"] %>
-      <% end %>
-
-
-      <% @sender.classrooms.each { |classroom| recipients_array.push(classroom.subject) } %>
-
-      <%= form_for @message, :html => { :multipart => true }, :class => 'form-horizontal' do |f| %>
-        <div>
-          <%= f.select :recipients, options_for_select(recipients_array), {prompt: 'Choose recipients', :class => 'form-control'} %>
-        </div>
-        <div>  
-          <%= f.text_field :subject_line, {:class => 'form-control', :placeholder => "Subject line"} %>
-        </div>
-        <div>
-          <%= f.text_area :text, {:class => 'form-control', :placeholder => 'Your message'} %>
-        </div>
-            <%= f.file_field :attachment%>
-        <div>
-          <%= f.submit "Send Email", {:class => 'btn btn-default message-submit'} %> 
-        </div>
-      <% end %>
-    </div>
+      <%= render "form" %>
+     </div>
   </div>
 </section>

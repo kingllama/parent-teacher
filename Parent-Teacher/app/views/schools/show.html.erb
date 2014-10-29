@@ -1,5 +1,3 @@
-
-
 <div class="school-body">
   <bh2 id="school-top">Hello, School Admin!</bh2>
   <div>
@@ -7,8 +5,8 @@
       <h2>Teachers</h2>
       <div class="col-scroll">
         <div>
-          <% @school.teachers.each do |teacher| %>
-            <%= teacher.full_name %>
+          <% @school.teachers.order(:lastname).each do |teacher| %>
+            <%= teacher.lastname + ", " + teacher.firstname %>
             <br>
           <% end %>
         </div>
@@ -18,8 +16,8 @@
       <h2>Students</h2>
       <div class="col-scroll">
         <div>
-          <% @school.students.each do |student| %>
-            <%= student.full_name %>
+          <% @school.students.order(:lastname).each do |student| %>
+            <%= student.lastname + ", " + student.firstname %>
             <br>
           <% end %>
         </div>
@@ -41,10 +39,10 @@
     <div class="school-col">
       <h2>Dashboard</h2>
       <div class="col-scroll">
-        <h5> <%= link_to "Add a student", new_student_path %> </h5>
-        <h5> <%= link_to "Add a classroom", new_classroom_path %> </h5>
-        <h5> <%= link_to "Add a teacher", new_teacher_path %> </h5>
-        <h5> <%= link_to "Send Emails", new_message_path %> </h5></div>
+        <h5> <%= link_to "Add a student", new_student_path, :data => { colorbox: true, colorbox_height: '80%'} %> </h5>
+        <h5> <%= link_to "Add a class", new_classroom_path, :data => { colorbox: true, colorbox_height: '80%'}  %> </h5>
+        <h5> <%= link_to "Add a teacher", new_teacher_path, :data => { colorbox: true, colorbox_height: '80%'}  %> </h5>
+        <h5> <%= link_to "Send Emails", new_message_path, :data => { colorbox: true, colorbox_height: '80%'}  %> </h5></div>
       </div>
     </div>
   </div>

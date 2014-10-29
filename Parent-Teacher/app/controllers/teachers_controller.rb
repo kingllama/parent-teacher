@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
   before_action :require_login
-  before_action :authorize, only: [:index, :create, :update, :destroy]
+  before_action :authorize, only: [:index, :create, :destroy]
  
   def index
     @teachers = Teacher.all
@@ -37,7 +37,7 @@ class TeachersController < ApplicationController
       redirect_to school_path(admin_user)
     else
       flash[:notice] = "There was an error and teacher was not created."
-      redirect_to root_path
+      render :new
     end
   end
 
@@ -60,7 +60,7 @@ class TeachersController < ApplicationController
 protected
 
   def teacher_params
-    params.require(:teacher).permit(:firstname, :lastname, :email, :gender)
+    params.require(:teacher).permit(:firstname, :lastname, :email, :gender, :school_id, :phone, :avatar, :password)
   end
 end
 

@@ -34,10 +34,10 @@
 
 .child-info{
   width: 250px;
-  height: 300px;
-  padding:20px;
+  height: 340px;
+  padding: 20px;
   border-radius: 5px;
-  background-color: #E48743;
+  background-color: #b3dcea;
   margin: 20px;
   display: inline-block;
   text-align: center;
@@ -59,12 +59,19 @@
   font-size: 20px;
   display: inline-block;
 }
+.child-name a{
+  color:black;
+}
+.child-name a:hover{
+  color:black;
+  text-decoration: underline;
+}
 .child-button{
   text-align: right;
   display: inline-block;
 }
 
 .appointment-list{
-  padding-top: 20px;
+  padding-top: 10px;
   position:absolute;
 }

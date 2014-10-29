@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
-  before_action :require_login
+ 
+  # before_action :require_login
 
   def index
     @messages = Message.all
@@ -29,7 +30,7 @@ class MessagesController < ApplicationController
       teachers = @sender.teachers 
       get_teacher_emails(teachers)
     else
-      classroom = Classroom.where('subject LIKE ?', @message.recipients)
+      classroom = Classroom.find_by(subject: @message.recipients)
       students = classroom.students
       get_parent_emails(students)
     end
@@ -37,7 +38,11 @@ class MessagesController < ApplicationController
     if @message.save
       UserMailer.custom_email(current_sender, @message, @send_to).deliver
       flash[:notice] = "Message sent!" #flashes not happening
-      redirect_to root_path
+      if @sender.is_a?(Teacher)
+        redirect_to teacher_path(@sender)
+      else
+        redirect_to school_path(@sender)
+      end
     else
       flash[:notice] = "There was an error and this message could not be sent."
       render :new

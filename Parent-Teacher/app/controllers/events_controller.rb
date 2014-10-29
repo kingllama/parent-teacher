@@ -22,6 +22,9 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    @event = Event.find(params[:id])
+    @teacher = Teacher.find(current_user.id)
+    get_students(@teacher)
   end
 
   # POST /events

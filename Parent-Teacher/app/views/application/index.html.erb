@@ -20,11 +20,11 @@
         <h3>Get started!</h3>
           <div>
             <br>
-            <% if current_user.type == "Teacher" %>
+            <% if current_user && current_user.type == "Teacher" %>
               <%= button_to "View Dashboard", teacher_path(current_user), { method: "get", :class => "btn btn-default" } %>
-            <% elsif current_user.type == "Parent" %>
+            <% elsif current_user && current_user.type == "Parent" %>
               <%= button_to "View Dashboard", parent_path(current_user), { method: "get", :class => "btn btn-default" } %>
-            <% elsif admin_user %>
+            <% elsif admin_user && admin_user.is_a?(School) %>
               <%= button_to "View Dashboard", school_path(admin_user), { method: "get", :class => "btn btn-default" } %>
             <% end %>
             <br>

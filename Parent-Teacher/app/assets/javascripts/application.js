@@ -12,12 +12,14 @@
 //
 
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require chosen-jquery
-//= require_tree .
 //= require websocket_rails/main
 //= require fullcalendar
+//= require colorbox-rails
+//= require turbolinks
+//= require_tree .
 
 
 
@@ -27,5 +29,6 @@ $(document).on('ready page:load', function () {
   $('#calendar').fullCalendar({
     events: '/events.json'
   });
+
   
 });
