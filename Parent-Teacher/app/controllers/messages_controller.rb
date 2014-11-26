@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
-  before_action :require_login
+ 
+  # before_action :require_login
 
   def index
     @messages = Message.all
@@ -37,7 +38,7 @@ class MessagesController < ApplicationController
     if @message.save
       UserMailer.custom_email(current_sender, @message, @send_to).deliver
       flash[:notice] = "Message sent!" #flashes not happening
-      if @sender.is_a?(User)
+      if @sender.is_a?(Teacher)
         redirect_to teacher_path(@sender)
       else
         redirect_to school_path(@sender)

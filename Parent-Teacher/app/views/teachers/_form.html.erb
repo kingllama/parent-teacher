@@ -17,6 +17,9 @@
         <%= f.telephone_field :phone, {:class => 'form-control', :placeholder => "Primary Phone Number"} %>
         </div>
         <div>
+        <%= f.password_field :password, {:class => 'form-control', :placeholder => "Password"} %>
+        </div>
+        <div>
         <%= f.hidden_field :school_id, {:class => 'form-control', :value => session[:school_id] } %>
         </div>
         <div>

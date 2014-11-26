@@ -45,6 +45,8 @@ gem 'chosen-rails'
 gem 'fullcalendar-rails'
 
 gem 'colorbox-rails', '~> 0.1.2'
+
+gem 'jquery-turbolinks'
 # Use unicorn as the app server
 # gem 'unicorn'
 
